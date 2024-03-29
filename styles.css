@@ -1,4 +1,26 @@
 body {
-    background-color: rgb(50, 50, 50);
-    color: rgb(225, 225, 225)
+    background-color: rgb(25, 25, 25);
+    color: rgb(255, 255, 255)
+}
+
+h1 {
+    font-size: 38px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+a:visited {
+    color: green;
+}
+
+a:link {
+    color: lightgreen;
+}
+
+#link_tray {
+    font-size: 22px;
 }

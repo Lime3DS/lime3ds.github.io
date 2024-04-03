@@ -1,0 +1,47 @@
+code {
+    background-color: gray;
+    padding: 2px;
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: gray;
+}
+
+.table-of-contents {
+    position: absolute;
+    right: 15%;
+    top: 20%;
+}
+
+.table-of-contents ul {
+    padding-top: 5px;
+}
+
+.table-of-contents li {
+    float: left;
+    clear: both;
+    padding: 1px;
+}
+
+.dependencies ul {
+    padding-top: 5px;
+}
+
+.dependencies li {
+    float: left;
+    clear: both;
+    padding: 1px;
+}
+
+.content {
+    display: inline;
+    float: left;
+    clear: both;
+}
+
+.code-float {
+    float: left;
+}
+
+.place-content {
+    place-items: unset;
+}

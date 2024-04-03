@@ -1,0 +1,1 @@
+alert("index.js working")

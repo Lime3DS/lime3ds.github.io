@@ -45,34 +45,45 @@
                 </ul>
             </ul>
         </div>
-    </div>
-    <div class="wiki-content">
-        <h1>Building for Windows</h1>
-        <h3>What you need:</h3>
-        <ul class="dependencies">
-            <li class="dependencies"><a href="">Visual Studio 2022 (Select C++ Support)</a></li>
-            <li class="dependencies"><a href="">CMake</a></li>
-            <li class="dependencies"><a href="">Git for Windows</a></li>
-            <ul class="dependencies">
-                <li class="dependencies">Make sure to select “Git from the command line and also from 3rd-party software”</li>
-            </ul>
-        </ul>
-        <h1 style="padding-top: 100px;">Cloning Lime3DS</h1>
-        <pre>
-            <samp class="code-float">git clone --recursive https://github.com/Lime3DS/Lime3DS</samp>
-            <samp class="code-float">cd Lime3DS</samp>
-        </pre>
-        <h1>Building</h1>
-        <ul class="dependencies">
-            <li class="dependencies">Open the CMake GUI Application and point it to the Lime3DS directory</li>
-            <li class="dependencies">Use the preexisting <code>build/</code> directory or tell CMake to make one</li>
-            <li class="dependencies">Click the configure button and choose <code>Visual Studio 17 2022</code> with <code>x64</code> for the optional platform</li>
-            <ul class="dependencies">
-                <li class="dependencies">If you get errors like "XXX does not contain a CMakeLists.txt file", it means you did not use the <code>--recursive</code> flag when cloning the repo. <br> Please run <code>git submodule update --init --recursive</code> to get the submodules</li>
-            </ul>
-            <li class="dependencies">Click Generate to create the project files</li>
-            <li>Open the solution file in Visual Studio 2022, which is located in the build folder</li>
-        </ul>
+        <div class="wiki-content">
+            <div class="content">
+                <h1>Building for Windows</h1>
+                <h3>What you need:</h3>
+                <ul class="dependencies">
+                    <li class="dependencies"><a href="">Visual Studio 2022 (Select C++ Support)</a></li>
+                    <li class="dependencies"><a href="">CMake</a></li>
+                    <li class="dependencies"><a href="">Git for Windows</a></li>
+                    <ul class="dependencies">
+                        <li class="dependencies">Make sure to select “Git from the command line and also from 3rd-party software”
+                        </li>
+                    </ul>
+                </ul>
+                <h1 style="padding-top: 100px;">Cloning Lime3DS</h1>
+                <pre>
+                        <samp class="code-float">git clone --recursive https://github.com/Lime3DS/Lime3DS</samp>
+                        <samp class="code-float">cd Lime3DS</samp>
+                    </pre>
+                <h1>Building</h1>
+                <ul class="dependencies">
+                    <li class="dependencies">Open the CMake GUI Application and point it to the Lime3DS directory</li>
+                    <li class="dependencies">Use the preexisting <code>build/</code> directory or tell CMake to make one</li>
+                    <li class="dependencies">Click the configure button and choose <code>Visual Studio 17 2022</code> with
+                        <code>x64</code> for the optional platform</li>
+                    <ul class="dependencies">
+                        <li class="dependencies">If you get errors like "XXX does not contain a CMakeLists.txt file", it means you
+                            did not use the <code>--recursive</code> flag when cloning the repo. Please run
+                            <code>git submodule update --init --recursive</code> to get the submodules</li>
+                    </ul>
+                    <li class="dependencies">Click Generate to create the project files</li>
+                    <li>Open the solution file in Visual Studio 2022, which is located in the build folder</li>
+                    <li>Depending on which frontend (SDL2 or Qt) you want to build or run, select "lime" or "lime-qt" in the
+                        Solution Explorer, right click and "Set as Starup Project"</li>
+                    <li>Select the appropriate build type, Debug for debug purposes or Release for performance (if in doubt, choose
+                        the latter)</li>
+                    <li>Press F5 or select Build → Rebuild Solution in the menu</li>
+                </ul>
+            </div>
+        </div>
     </div>
     <script type="module" src="index.js"></script>
 </body>

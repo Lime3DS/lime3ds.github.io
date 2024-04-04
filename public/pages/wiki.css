@@ -32,16 +32,22 @@ code {
     padding: 1px;
 }
 
-.content {
-    display: inline;
-    float: left;
-    clear: both;
-}
-
 .code-float {
     float: left;
 }
 
-.place-content {
-    place-items: unset;
+.wiki-content {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    left: 2.5%;
+    top: 10%;
+}
+
+.wiki-content .content {
+    display: inline-block;
+    position: absolute;
+    height: fit-content;
+    width: max-content;
+    left: 0%;
 }

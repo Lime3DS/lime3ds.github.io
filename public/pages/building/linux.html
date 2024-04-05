@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lime3DS</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../wiki.css">
+
+    <style>
+        body {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="alert-bar">
+            <h3>Lime3DS is officially out! Get the <a
+                    href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Latest Release!</a></h3>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../wiki.html">Wiki</a></li>
+                <li><a href="https://discord.com/invite/4ZjMpAp3M6">Discord</a></li>
+                <li><a href="https://github.com/Lime3DS/Lime3DS">Github</a></li>
+                <li><a href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Releases</a></li>
+            </ul>
+        </div>
+        
+        <div class="table-of-contents">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li>Building from Source</li>
+                <ul>
+                    <li>Building for MacOS</li>
+                    <li>Cloning Lime3DS</li>
+                    <li>Building</li>
+                </ul>
+            </ul>
+        </div>
+        <div class="wiki-content">
+            <div class="content">
+                <h1>Building for Android</h1>
+                <h2>What you will need:</h2>
+                <ul class="dependencies">
+                    <li class="dependencies">Dependencies:</li>
+                    <ul>
+                        <li>SDL2</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install libsdl2-dev</code></li>
+                            <li>Arch: <code>pacman -S sdl2</code></li>
+                            <li>Fedora: <code>sudo dnf install SDL2-devel</code></li>
+                            <li>OpenSUSE: <code>zypper in libSDL2-devel</code></li>
+                        </ul>
+                        <li>OpenSSL (Optional)</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install libssl-dev</code></li>
+                            <li>Arch: <code>pacman -S openssl-1.0</code></li>
+                            <li>Fedora: <code>sudo dnf install openssl-devel</code></li>
+                            <li>OpenSUSE: <code>zypper in openssl-devel</code></li>
+                        </ul>
+                        <li>Qt 6.2+</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install qt6-base-dev qt6-base-private-dev qt6-multimedia-dev</code></li>
+                            <ul>
+                                <li>For Translation Support: <code>apt install qt6-l10n-tools qt6-tools-dev qt6-tools-dev-tools</code></li>
+                                <li>For WrapOpenGL Errors: <code>apt install libgl-dev</code></li>
+                            </ul>
+                            <li>Arch: <code>pacman -S qt6-base qt6-multimedia qt6-multimedia-ffmpeg</code></li>
+                            <ul>
+                                <li>You also need a multimedia backend: <code>qt6-multimedia-ffmpeg</code> or <code>qt6-multimedia-gstreamer</code></li>
+                            </ul>
+                            <li>Fedora: <code>sudo dnf install qt6-qtbase-devel qt6-qtbase-private-devel qt6-qtmultimedia-devel</code></li>
+                            <li>OpenSUSE: <code>zypper in qt6-base qt6-multimedia</code></li>
+                        </ul>
+                        <li>PortAudio</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install libasound-dev</code></li>
+                            <li>Fedora: <code>sudo dnf install portaudio-devel</code></li>
+                            <li>OpenSUSE Leap 15: <code>zypper in portaudio-devel</code></li>
+                            <li>OpenSUSE Tumbleweed: <code>zypper in portaudio-devel</code></li>
+                        </ul>
+                        <li>XORG</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install xorg-dev libx11-dev libxext-dev</code></li>
+                            <li>Fedora: <code>sudo dnf install xorg-x11-server-devel libX11-devel libXext-devel</code></li>
+                            <li>OpenSUSE Leap 15: <code>zypper in xorg-x11-util-devel libX11-devel libXext-devel</code></li>
+                            <li>OpenSUSE Tumbleweed: <code>zypper in xorg-x11-util-devel libX11-devel libXext-devel</code></li>
+                        </ul>
+                        <li>JACK Audio Connection Kit</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install jackd</code></li>
+                            <li>Fedora: <code>sudo dnf install jack-audio-connection-kit-devel</code></li>
+                            <li>OpenSUSE Leap 15: <code>zypper in libjack-devel</code></li>
+                            <li>OpenSUSE Tumbleweed: <code>zypper in libjack-devel</code></li>
+                        </ul>
+                        <li>PipeWire</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install libpipewire-0.3-dev</code></li>
+                            <li>Fedora: <code>sudo dnf install pipewire-devel</code></li>
+                            <li>OpenSUSE Leap 15: <code>zypper in pipewire-devel</code></li>
+                            <li>OpenSUSE Tumbleweed: <code>zypper in pipewire-devel</code></li>
+                        </ul>
+                        <li>sndio (Optional)</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install libsndio-dev</code></li>
+                            <li>Fedora: <code>sudo dnf -y copr enable andykimpe/shadow && sudo dnf -y install sndio</code></li>
+                            <li>OpenSUSE Leap 15: <code>zypper in sndio-devel</code></li>
+                            <li>OpenSUSE Tumbleweed: <code>zypper in sndio-devel</code></li>
+                        </ul>
+                        <li>Gnome ESound (Optional)</li>
+                        <ul>
+                            <li>Deb: <code>echo "esound require build use source code https://download.gnome.org/sources/esound/"</code></li>
+                            <li>Fedora: <code>sudo dnf install esound-devel</code></li>
+                            <li>OpenSUSE Leap 15: <code>zypper in libesd0-devel</code></li>
+                            <li>OpenSUSE Tumbleweed: <code>zypper in libesd0-devel</code></li>
+                        </ul>
+                        <li>Compiler (You only need one of these)</li>
+                        <ul>
+                            <li>GCC 11.0+</li>
+                            <ul>
+                                <li>Deb: <code>apt install build-essential</code></li>
+                                <li>Arch: <code>pacman -S base-devel</code></li>
+                                <li>Fedora: <code>dnf install gcc-c++</code></li>
+                                <li>OpenSUSE: <code>zypper in gcc-c++</code></li>
+                            </ul>
+                            <li>Clang 15.0+</li>
+                            <ul>
+                                <li>Deb: <code>apt install clang clang-format libc++-dev</code></li>
+                                <ul>
+                                    <li>Note for Ubuntu users: Clang 15 is available only from 22.10 onward. For earlier distro versions, see: <a href="https://apt.llvm.org/">https://apt.llvm.org/</a></li>
+                                </ul>
+                                <li>Arch: <code>pacman -S clang</code>, <code>libc++</code> is in the AUR. Use pacaur or yaourt to install it.</li>
+                                <li>Fedora: <code>dnf install clang libcxx-devel</code></li>
+                                <li>OpenSUSE: <code>zypper in clang</code></li>
+                            </ul>
+                        </ul>
+                        <li>CMake 3.20+</li>
+                        <ul>
+                            <li>Deb: <code>apt install cmake</code></li>
+                            <li>Arch: <code>pacman -S cmake</code></li>
+                            <li>Fedora: <code>dnf install cmake</code></li>
+                            <li>OpenSUSE: <code>zypper in cmake extra-cmake-modules</code></li>
+                        </ul>
+                    </ul>
+                </ul>
+                
+                <h1 style="padding-top: 1650px;">Cloning Lime3DS</h1>
+                <pre>
+                    <code class="code-float">git clone --recursive https://github.com/Lime3DS/Lime3DS</code> <br>
+                </pre>
+                <h1>Building</h1>
+                <ul class="dependencies">
+                    <li class="dependencies"><code>mkdir build && cd build</code></li>
+                    <li class="dependencies"><code>cmake ../</code></li>
+                    <li class="dependencies"><code></code></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

@@ -42,6 +42,7 @@ h1 {
   background-color: #333;
   min-width: 101%;
   padding: 5px;
+  text-align: center;
 }
 
 .navbar ul {
@@ -69,6 +70,7 @@ h1 {
   background-color: #03cd0d;
   min-width: 100%;
   padding: 8px;
+  text-align: center;
 }
 
 .alert-bar h3 {
@@ -81,7 +83,6 @@ h1 {
   max-height: 100vh;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 button {

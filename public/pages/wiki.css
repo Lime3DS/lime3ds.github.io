@@ -39,16 +39,18 @@ code {
 .wiki-content {
     position: absolute;
     width: max-content;
-    height: max-content;
-    left: 2.5%;
+    height: fit-content;
+    left: 5%;
     top: 10%;
     display: inline-block;
 }
 
 .wiki-content .content {
-    display: inline-block;
     position: absolute;
     height: 100%;
     width: max-content;
+    height: max-content;
     left: 0%;
+    float: left;
+    clear: both;
 }

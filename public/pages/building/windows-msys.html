@@ -37,11 +37,9 @@
             <ul>
                 <li>Building from Source</li>
                 <ul>
-                    <li>Windows</li>
-                    <li>MacOS</li>
-                    <li>Linux</li>
-                    <li>Android</li>
-                    <li>OpenBSD</li>
+                    <li>Building for Windows</li>
+                    <li>Cloning Lime3DS</li>
+                    <li>Building</li>
                 </ul>
             </ul>
         </div>
@@ -50,9 +48,9 @@
                 <h1>Building for Windows</h1>
                 <h3>What you need:</h3>
                 <ul class="dependencies">
-                    <li class="dependencies"><a href="">Visual Studio 2022 (Select C++ Support)</a></li>
-                    <li class="dependencies"><a href="">CMake</a></li>
-                    <li class="dependencies"><a href="">Git for Windows</a></li>
+                    <li class="dependencies"><a href="https://cmake.org">CMake</a></li>
+                    <li class="dependencies"><a href="https://gitforwindows.org/">Git for Windows</a></li>
+                    <li class="dependencies"><a href="https://www.msys2.org/">MSYS2</a></li>
                     <ul class="dependencies">
                         <li class="dependencies">Make sure to select “Git from the command line and also from 3rd-party software”
                         </li>
@@ -60,27 +58,20 @@
                 </ul>
                 <h1 style="padding-top: 100px;">Cloning Lime3DS</h1>
                 <pre>
-                        <samp class="code-float">git clone --recursive https://github.com/Lime3DS/Lime3DS</samp>
-                        <samp class="code-float">cd Lime3DS</samp>
-                    </pre>
+                        <code class="code-float">git clone --recursive https://github.com/Lime3DS/Lime3DS</code> <br>
+                        <code class="code-float">cd Lime3DS</code>
+                </pre>
                 <h1>Building</h1>
                 <ul class="dependencies">
-                    <li class="dependencies">Open the CMake GUI Application and point it to the Lime3DS directory</li>
-                    <li class="dependencies">Use the preexisting <code>build/</code> directory or tell CMake to make one</li>
-                    <li class="dependencies">Click the configure button and choose <code>Visual Studio 17 2022</code> with
-                        <code>x64</code> for the optional platform</li>
+                    <li class="dependencies">Open the "MSYS2 Clang64" (clang64.exe) shell</li>
+                    <li class="dependencies">Download and install all dependencies using: <code>pacman -S mingw-w64-clang-x86_64-{gcc,qt6,cmake} make git</code></li>
+                    <li class="dependencies">Make a build directory: <code>mkdir build && cd build</code></li>
+                    <li class="dependencies">Make CMake files: <code>cmake -DCMAKE_BUILD_TYPE=Release ..</code></li>
                     <ul class="dependencies">
-                        <li class="dependencies">If you get errors like "XXX does not contain a CMakeLists.txt file", it means you
-                            did not use the <code>--recursive</code> flag when cloning the repo. Please run
-                            <code>git submodule update --init --recursive</code> to get the submodules</li>
+                        <li class="dependencies">To build without Qt, pass <code>-DENABLE_QT=no</code> to CMake</li>
                     </ul>
-                    <li class="dependencies">Click Generate to create the project files</li>
-                    <li>Open the solution file in Visual Studio 2022, which is located in the build folder</li>
-                    <li>Depending on which frontend (SDL2 or Qt) you want to build or run, select "lime" or "lime-qt" in the
-                        Solution Explorer, right click and "Set as Starup Project"</li>
-                    <li>Select the appropriate build type, Debug for debug purposes or Release for performance (if in doubt, choose
-                        the latter)</li>
-                    <li>Press F5 or select Build → Rebuild Solution in the menu</li>
+                    <li class="dependencies">Make the executable: <code>make -j4</code></li>
+                    <li class="dependencies">You can run the exe from command line with: <code>./bin/lime-qt.exe</code></li>
                 </ul>
             </div>
         </div>

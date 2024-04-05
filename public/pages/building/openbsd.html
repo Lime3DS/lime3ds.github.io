@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lime3DS</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../wiki.css">
+
+    <style>
+        body {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="alert-bar">
+            <h3>Lime3DS is officially out! Get the <a
+                    href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Latest Release!</a></h3>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../wiki.html">Wiki</a></li>
+                <li><a href="https://discord.com/invite/4ZjMpAp3M6">Discord</a></li>
+                <li><a href="https://github.com/Lime3DS/Lime3DS">Github</a></li>
+                <li><a href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Releases</a></li>
+            </ul>
+        </div>
+        
+        <div class="table-of-contents">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li>Building from Source</li>
+                <ul>
+                    <li>Building for OpenBSD</li>
+                    <li>Cloning Lime3DS</li>
+                    <li>Building</li>
+                </ul>
+            </ul>
+        </div>
+        <div class="wiki-content">
+            <div class="content">
+                <h1>Building for OpenBSD</h1>
+                <p>OpenBSD is not officially supported. These instructions are not actively updated.</p>
+                <h1>Cloning Lime3DS</h1>
+                <pre>
+                    <code class="code-float">git clone --recursive https://github.com/Lime3DS/Lime3DS</code> <br>
+                    <code class="code-float">cd Lime3DS</code>
+                </pre>
+                <h1>Building</h1>
+                <ul class="dependencies">
+                    <li class="dependencies">Install the required packages: <code>pkg_add cmake sdl2 qtbase</code></li>
+                    <li class="dependencies">Make the build directory: <code>mkdir build && cd build</code></li>
+                    <li class="dependencies">Export the Qt directory: <code>export Qt5_DIR=/usr/local/lib/qt5/cmake/Qt5</code></li>
+                    <li class="dependencies">Make CMake files: <code>cmake -DCMAKE_CXX_FLAGS='-I/usr/local/include -O2' -DCMAKE_EXE_LINKER_FLAGS='-z wxneeded' ..</code></li>
+                    <li class="dependencies">Make executable: <code>make</code></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

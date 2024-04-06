@@ -106,7 +106,7 @@ p {
 }
 
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #222222;
+  background-color: #333333;
 }
 
 .dropdown {
@@ -144,5 +144,5 @@ p {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #222222;
+  background-color: #111111;
 }

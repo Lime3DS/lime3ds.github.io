@@ -94,13 +94,12 @@ p {
 
 .dropbtn {
   background-color: #111111;
-  color: black;
-  padding: 12px 20px;
+  color: white;
+  padding: 12px 17px;
   font-size: 16px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  position: absolute;
   top: 50%;
   left: 10px;
   margin-left: -10px;

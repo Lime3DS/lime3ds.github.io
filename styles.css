@@ -142,7 +142,3 @@ p {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
-.dropdown:hover {
-  background-color: #ddd;
-}

@@ -10,7 +10,7 @@ body {
     background-color: #222222;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 999px;
     width: 100vw;
     margin: 0;
     display: flex;
@@ -29,7 +29,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 #link_tray a {

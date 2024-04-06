@@ -136,13 +136,13 @@ p {
 }
 
 .dropdown-content a:hover {
-  background-color: #333333;
+  background-color: #ddd;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-.dropdown:hover {
-  background-color: #ddd;
+.dropdown:hover .dropbtn {
+  background-color: #111111;
 }

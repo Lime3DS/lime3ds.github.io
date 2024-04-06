@@ -143,6 +143,6 @@ p {
   display: block;
 }
 
-.dropdown:hover .dropbtn {
-  background-color: #111111;
+.dropdown:hover {
+  background-color: #ddd;
 }

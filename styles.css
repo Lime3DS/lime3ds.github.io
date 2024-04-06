@@ -37,7 +37,7 @@ body {
 }
 
 #box {
-    background: linear-gradient(to bottom right, lime, blue);
+    background: linear-gradient(to bottom right, lime, green);
     color: white;
     text-align: center;
     padding: 20px;

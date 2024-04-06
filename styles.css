@@ -95,15 +95,12 @@ p {
 .dropbtn {
   background-color: #111111;
   color: white;
-  padding: 12px 17px;
   font-size: 16px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   top: 50%;
-  display: inline;
   position: absolute;
-  right: 500px;
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -121,7 +118,7 @@ p {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  top: 100%;
+  top: 100px;
   left: 0;
   border-radius: 10px;
 }

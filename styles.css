@@ -110,8 +110,8 @@ p {
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+  position: absolute;
+  margin: 1em
 }
 
 .dropdown-content {

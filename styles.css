@@ -43,7 +43,7 @@ body {
     padding: 20px;
     border-radius: 20px;
     margin: 20px;
-    height: calc(50px + 15vh);
+    height: 15vh;
 }
 
 #content {

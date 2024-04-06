@@ -29,7 +29,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 7px;
+    margin-top: 10px;
 }
 
 #link_tray a {
@@ -45,7 +45,6 @@ body {
     padding: 20px;
     border-radius: 20px;
     margin: 20px;
-    margin-left: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,7 +52,7 @@ body {
 
 .box-img {
     width: 35px;
-    margin-left: 10px; /* Adjust this value as needed */
+    margin-left: 10px;
 }
 
 #content {
@@ -63,7 +62,6 @@ body {
     padding: 20px;
     border-radius: 20px;
     margin: 20px;
-    margin-left: 10px;
 }
 
 h3 {

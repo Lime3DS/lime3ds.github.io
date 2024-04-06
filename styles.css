@@ -113,7 +113,7 @@ p {
 .dropdown {
   position: absolute;
   margin: 1em
-  transform: translateX(-50%);
+  right: 100%;
 }
 
 .dropdown-content {

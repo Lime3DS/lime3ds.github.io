@@ -101,7 +101,6 @@ p {
   border-radius: 10px;
   cursor: pointer;
   top: 50%;
-  left: 10px;
   display: inline;
   position: absolute;
 }
@@ -113,7 +112,7 @@ p {
 .dropdown {
   position: absolute;
   margin: 1em
-  right: 100%;
+  right: 100vw;
 }
 
 .dropdown-content {

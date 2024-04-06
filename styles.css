@@ -112,7 +112,7 @@ p {
 .dropdown {
   position: absolute;
   margin: 1em
-  right: 100vw;
+  right: 999px;
 }
 
 .dropdown-content {

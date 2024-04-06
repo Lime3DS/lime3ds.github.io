@@ -102,7 +102,7 @@ p {
   cursor: pointer;
   top: 50%;
   left: 10px;
-  margin-left: -10px;
+  display: inline;
 }
 
 .dropbtn:hover, .dropbtn:focus {

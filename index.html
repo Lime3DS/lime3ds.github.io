@@ -3,24 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lime 3DS</title>
-
-    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Lime3DS/lime3ds.github.io/main/favicon.ico">
-    <link rel="stylesheet" href="https://lime3ds.github.io/styles.css">
+    <title>Lime3DS</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Lime 3DS Emulator</h1>
-
-    <hr>
-
+  <div id="header">
+    <div class="dropdown">
+      <button class="dropbtn">Menu</button>
+      <div class="dropdown-content">
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#todo">To do</a>
+        <a href="#wiki">Wiki</a>
+      </div>
+    </div>
     <div id="link_tray">
         <a href="https://github.com/Lime3DS/Lime-3DS-Emulator">GitHub</a> |
         <a href="https://discord.com/invite/4ZjMpAp3M6">Discord</a> |
         <a href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Releases</a>
     </div>
+  </div>
 
-    <hr>
+  <div id="box">
+    <img class="box-img" src="lime.svg">
+    <h2>Lime3DS</h2>
+  </div>
 
+  <div id="content">
+    <h3 id="about" style="margin-top: 0em;">About</h3>
+    <p>Lime3DS is an open-source, easy-to-use Nintendo 3DS emulator, forked from Citra. Lime has many features, such as firmware emulation, amiibo loading, and partial support for homebrew applications.</p>
+    
+    <h3 id="faq">FAQ</h3>
+    <p>Here are some of the most frequently asked questions we get from the Lime3DS Discord server.</p>
+    <p>"Why won't Lime launch on my computer?"<br>There are two executables for Lime3DS, 'lime.exe' and 'lime-qt.exe'. Make sure you are launching 'lime-qt.exe'.</p>
+    <p>"Why does Lime keep crashing?"<br>One of the most common reasons for Lime crashing is insufficient and/or unsupported hardware. 4GB+ of RAM is recommended in order to properly run Lime3DS.</p>
+    <p>What are the minimum specs to run Lime on my device?"<br>Desktop PC:
+Operating System: Windows 10/11 (64-bit), MacOS Big Sur, or modern 64-bit Linux.
+
+CPU: x68-64 (64-bit) CPU. Single core performance higher than 1,800 on Passmark.
+
+GPU: OpenGL 4.3 or Vulkan 1.1 support.
+
+Ram: 2GB of free RAM. 4GB is recommended.
+
+Android:
+Operating System: Android 9.0+.
+CPU: AArch64. Snapdragon 835 SoC or better.
+GPU: OpenGL ES 3.2 or Vulkan 1.1 support.</p>
+    <p>Have any questions? Please refer to the <a href="https://github.com/Lime3DS/Lime-3DS-Emulator">GitHub repository</a> or the <a href="https://discord.com/invite/4ZjMpAp3M6">Discord server</a>.</p>
+    
+    <h3 id="todo">To do</h3>
     <p>Sorry, this area is under construction! Please check again soon.</p>
+    
+    <h3 id="wiki">Wiki</h3>
+    <p style="margin-bottom: 0em;">Sorry, this area is under construction! Please check again soon.</p>
+  </div>
 </body>
 </html>

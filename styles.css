@@ -103,6 +103,7 @@ p {
   top: 50%;
   display: inline;
   position: absolute;
+  left: 0px;
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -111,8 +112,6 @@ p {
 
 .dropdown {
   position: absolute;
-  margin: 1em;
-  right: 999px;
 }
 
 .dropdown-content {

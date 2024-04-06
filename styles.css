@@ -93,7 +93,7 @@ p {
 }
 
 .dropbtn {
-  background-color: #f1f1f1;
+  background-color: #111111;
   color: black;
   padding: 12px 20px;
   font-size: 16px;
@@ -102,7 +102,6 @@ p {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   left: 10px;
   margin-left: -10px;
 }

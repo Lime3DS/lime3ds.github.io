@@ -93,11 +93,11 @@ p {
 }
 
 .dropbtn {
-  background-color: transparent;
+  background-color: #2980B9;
   color: white;
   padding: 12px 20px;
   font-size: 16px;
-  border: 2px solid transparent;
+  border: none;
   border-radius: 10px;
   cursor: pointer;
   position: absolute;
@@ -107,8 +107,7 @@ p {
 }
 
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
-  border-color: #2980B9;
+  background-color: #1c6ca0;
 }
 
 .dropdown {
@@ -145,5 +144,5 @@ p {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #2980B9;
+  background-color: #1c6ca0;
 }

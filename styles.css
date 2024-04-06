@@ -17,7 +17,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 65px;
+    height: 38px;
 }
 
 #header h1 {
@@ -26,6 +26,7 @@ body {
 }
 
 #link_tray {
+    vertical-align: center;
     text-align: center;
     margin-top: 5px;
 }
@@ -43,6 +44,14 @@ body {
     padding: 20px;
     border-radius: 20px;
     margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-img {
+    width: 35px;
+    margin-left: 10px; /* Adjust this value as needed */
 }
 
 #content {
@@ -75,4 +84,9 @@ h3::after {
 p {
     margin-top: 1.66em;
     margin-bottom: 3.25em;
+}
+        
+#box h2 {
+    display: inline;
+    margin-left: 10px;
 }

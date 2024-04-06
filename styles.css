@@ -29,7 +29,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 7px;
 }
 
 #link_tray a {
@@ -45,6 +45,7 @@ body {
     padding: 20px;
     border-radius: 20px;
     margin: 20px;
+    margin-left: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,6 +63,7 @@ body {
     padding: 20px;
     border-radius: 20px;
     margin: 20px;
+    margin-left: 10px;
 }
 
 h3 {

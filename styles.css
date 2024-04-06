@@ -111,7 +111,7 @@ p {
 
 .dropdown {
   position: absolute;
-  margin: 1em;
+  margin-left: 0.5em;
   left: 0;
 }
 

@@ -104,7 +104,6 @@ p {
   top: 50%;
   transform: translateY(-50%);
   left: 10px;
-  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -127,8 +126,6 @@ p {
   top: 100%;
   left: 0;
   border-radius: 10px;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
 }
 
 .dropdown-content a {
@@ -136,6 +133,7 @@ p {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  border-radius: 10px;
 }
 
 .dropdown-content a:hover {
@@ -144,7 +142,6 @@ p {
 
 .dropdown:hover .dropdown-content {
   display: block;
-  opacity: 1;
 }
 
 .dropdown:hover .dropbtn {

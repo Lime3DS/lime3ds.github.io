@@ -9,11 +9,10 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../wiki.css">
 
-    <style>
-        body {
-            float: left;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </head>
 
 <body>
@@ -47,31 +46,33 @@
             <div class="content">
                 <h1>Building for Windows</h1>
                 <h3>What you need:</h3>
-                <ul class="dependencies">
-                    <li class="dependencies"><a href="https://cmake.org">CMake</a></li>
-                    <li class="dependencies"><a href="https://gitforwindows.org/">Git for Windows</a></li>
-                    <li class="dependencies"><a href="https://www.msys2.org/">MSYS2</a></li>
-                    <ul class="dependencies">
-                        <li class="dependencies">Make sure to select “Git from the command line and also from 3rd-party software”
+                <ul>
+                    <li><a href="https://cmake.org">CMake</a></li>
+                    <li><a href="https://gitforwindows.org/">Git for Windows</a></li>
+                    <li><a href="https://www.msys2.org/">MSYS2</a></li>
+                    <ul>
+                        <li>Make sure to select “Git from the command line and also from 3rd-party software”
                         </li>
                     </ul>
                 </ul>
-                <h1 style="padding-top: 100px;">Cloning Lime3DS</h1>
-                <pre>
-                        <code class="code-float">git clone --recursive https://github.com/Lime3DS/Lime3DS</code> <br>
-                        <code class="code-float">cd Lime3DS</code>
+                <h1>Cloning Lime3DS</h1>
+                <pre style="width: 500px;">
+                    <code class="language-bash">
+    git clone --recursive https://github.com/Lime3DS/Lime3DS
+    cd Lime3DS
+                    </code>
                 </pre>
                 <h1>Building</h1>
-                <ul class="dependencies">
-                    <li class="dependencies">Open the "MSYS2 Clang64" (clang64.exe) shell</li>
-                    <li class="dependencies">Download and install all dependencies using: <code>pacman -S mingw-w64-clang-x86_64-{gcc,qt6,cmake} make git</code></li>
-                    <li class="dependencies">Make a build directory: <code>mkdir build && cd build</code></li>
-                    <li class="dependencies">Make CMake files: <code>cmake -DCMAKE_BUILD_TYPE=Release ..</code></li>
-                    <ul class="dependencies">
-                        <li class="dependencies">To build without Qt, pass <code>-DENABLE_QT=no</code> to CMake</li>
+                <ul>
+                    <li>Open the "MSYS2 Clang64" (clang64.exe) shell</li>
+                    <li>Download and install all dependencies using: <code>pacman -S mingw-w64-clang-x86_64-{gcc,qt6,cmake} make git</code></li>
+                    <li>Make a build directory: <code>mkdir build && cd build</code></li>
+                    <li>Make CMake files: <code>cmake -DCMAKE_BUILD_TYPE=Release ..</code></li>
+                    <ul>
+                        <li>To build without Qt, pass <code>-DENABLE_QT=no</code> to CMake</li>
                     </ul>
-                    <li class="dependencies">Make the executable: <code>make -j4</code></li>
-                    <li class="dependencies">You can run the exe from command line with: <code>./bin/lime-qt.exe</code></li>
+                    <li>Make the executable: <code>make -j4</code></li>
+                    <li>You can run the exe from command line with: <code>./bin/lime-qt.exe</code></li>
                 </ul>
             </div>
         </div>

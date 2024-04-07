@@ -6,6 +6,16 @@ code {
     border-color: gray;
 }
 
+pre code {
+    background-color: gray;
+    border-radius: 5px;
+    border: 1px solid gray;
+    display: block;
+    padding: 2px;
+    display: block;
+    white-space: pre-wrap;
+}
+
 .table-of-contents {
     position: absolute;
     right: 15%;

@@ -9,11 +9,10 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../wiki.css">
 
-    <style>
-        body {
-            float: left;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </head>
 
 <body>
@@ -37,7 +36,10 @@
             <ul>
                 <li>Building from Source</li>
                 <ul>
-                    <li>Building for MacOS</li>
+                    <li>Building for Linux</li>
+                    <ul>
+                        <li>Dependencies</li>
+                    </ul>
                     <li>Cloning Lime3DS</li>
                     <li>Building</li>
                 </ul>
@@ -45,14 +47,14 @@
         </div>
         <div class="wiki-content">
             <div class="content">
-                <h1>Building for Android</h1>
+                <h1>Building for Linux</h1>
                 <h2>What you will need:</h2>
-                <ul class="dependencies">
-                    <li class="dependencies">Dependencies:</li>
+                <ul>
+                    <li>Dependencies:</li>
                     <ul>
                         <li>SDL2</li>
                         <ul>
-                            <li>Deb: <code>sudo apt install libsdl2-dev</code></li>
+                            <li>Deb: <code class="language-bash">sudo apt install libsdl2-dev</code></li>
                             <li>Arch: <code>pacman -S sdl2</code></li>
                             <li>Fedora: <code>sudo dnf install SDL2-devel</code></li>
                             <li>OpenSUSE: <code>zypper in libSDL2-devel</code></li>
@@ -150,15 +152,97 @@
                     </ul>
                 </ul>
                 
-                <h1 style="padding-top: 1650px;">Cloning Lime3DS</h1>
+                <h1>Cloning Lime3DS</h1>
                 <pre>
-                    <code class="code-float">git clone --recursive https://github.com/Lime3DS/Lime3DS</code> <br>
+                    <code class="language-bash">
+    git clone --recursive https://github.com/Lime3DS/Lime3DS
+    cd Lime3DS
+                    </code>
                 </pre>
                 <h1>Building</h1>
-                <ul class="dependencies">
-                    <li class="dependencies"><code>mkdir build && cd build</code></li>
-                    <li class="dependencies"><code>cmake ../</code></li>
-                    <li class="dependencies"><code></code></li>
+                <h2>Building Lime in Debug Mode (Slow)</h2>
+                <h3>Using GCC</h3>
+                <pre>
+                    <code class="language-bash">
+    mkdir build
+    cd build
+    cmake ../
+    cmake --build . -- -j"$(nproc)"
+    sudo make install (optional)
+                    </code>
+                </pre>
+                <p>Optionally, you can use “cmake -i ..” to adjust various options (e.g. disable the Qt GUI).</p>
+                <h3>Using Clang</h3>
+                <pre>
+                    <code class="language-bash">
+    mkdir build
+    cd build
+    cmake .. -DCMAKE_CXX_COMPILER=clang++-5.0 \
+        -DCMAKE_C_COMPILER=clang-5.0 \
+        -DCMAKE_CXX_FLAGS="-O2 -g -stdlib=libc++"
+    cmake --build . -- -j"$(nproc)"
+    sudo make install (optional)
+                    </code>
+                </pre>
+                <p>If you get a weird compile error related to std::span conversions, make sure you are using clang and libc++ 15 or up. This is an issue with libc++ 14.</p>
+                <br>
+                <h2>Building Lime in Release Mode (Optimized)</h2>
+                <pre>
+                    <code class="language-bash">
+    mkdir build
+    cd build
+    cmake .. -DCMAKE_BUILD_TYPE=Release
+    cmake --build . -- -j"$(nproc)"
+    sudo make install (optional)
+                    </code>
+                </pre>
+                <br>
+                <h2>Building Lime with Debug Symbols</h2>
+                <pre>
+                    <code class="language-bash">
+    mkdir build
+    cd build
+    cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    cmake --build . -- -j"$(nproc)"
+    sudo make install (optional)
+                    </code>
+                </pre>
+                <br>
+                <h2>Running without installing</h2>
+                <p>After building, the binaries <code>lime</code>, <code>lime-qt</code> and <code>lime-room</code> (depending on your build options) will end up in build/bin/.</p>
+                <pre>
+                    <code class="language-bash">
+    # SDL
+    cd build/bin/
+    ./citra
+    
+    # Qt
+    cd build/bin/
+    ./citra-qt
+    
+    # Dedicated room
+    cd build/bin/
+    ./citra-room
+                    </code>
+                </pre>
+                <br>
+                <h2>Debugging</h2>
+                <pre>
+                    <code class="language-bash">
+    cd data
+    gdb ../build/bin/citra-qt
+    (gdb) run
+
+    (gdb) bt
+                    </code>
+                </pre>
+                <br>
+                <h2>Install new Qt Version</h2>
+                <p>If your distribution’s version of Qt is too old, there are a few places you may be able to find newer versions.</p>
+                <ul>
+                    <li>This Ubuntu PPA contains backports of Qt 6 to various older versions: <a href="https://launchpad.net/~savoury1/+archive/ubuntu/qt-6-2">https://launchpad.net/~savoury1/+archive/ubuntu/qt-6-2</a></li>
+                    <li>This unofficial CLI installer allows downloading and installing the latest first-party builds of Qt to your system <br>
+                        (whether it works against your distribution may vary): <a href="https://github.com/miurahr/aqtinstall">https://github.com/miurahr/aqtinstall</a></li>
                 </ul>
             </div>
         </div>

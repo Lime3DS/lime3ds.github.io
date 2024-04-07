@@ -9,11 +9,10 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../wiki.css">
 
-    <style>
-        body {
-            float: left;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </head>
 
 <body>
@@ -48,9 +47,11 @@
                 <h1>Building for OpenBSD</h1>
                 <p>OpenBSD is not officially supported. These instructions are not actively updated.</p>
                 <h1>Cloning Lime3DS</h1>
-                <pre>
-                    <code class="code-float">git clone --recursive https://github.com/Lime3DS/Lime3DS</code> <br>
-                    <code class="code-float">cd Lime3DS</code>
+                <pre style="width: 500px;">
+                    <code class="language-bash">
+    git clone --recursive https://github.com/Lime3DS/Lime3DS
+    cd Lime3DS
+                    </code>
                 </pre>
                 <h1>Building</h1>
                 <ul class="dependencies">

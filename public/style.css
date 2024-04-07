@@ -93,6 +93,19 @@ body {
   margin-left: 10px;
 }
 
+#msgbox {
+  background: linear-gradient(to bottom right, lime, darkgreen);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 12px;
+}
+
 #content {
   background-color: #222222;
   color: white;

@@ -19,7 +19,7 @@ pre code {
 .table-of-contents {
     position: relative;
     top: 10%;
-    padding: 10px;
+    margin: 2.5em;
 }
 
 .table-of-contents ul {

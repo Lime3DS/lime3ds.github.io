@@ -32,20 +32,6 @@ pre code {
     padding: 1px;
 }
 
-.dependencies ul {
-    padding-top: 5px;
-}
-
-.dependencies li {
-    float: left;
-    clear: both;
-    padding: 1px;
-}
-
-.code-float {
-    float: left;
-}
-
 .wiki-content {
     position: absolute;
     width: max-content;
@@ -64,3 +50,45 @@ pre code {
     float: left;
     clear: both;
 }
+.navbar {
+    position: absolute;
+    top: 4%;
+    left: 0%;
+    background-color: #222222;
+    min-width: 101%;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar li {
+    display: inline-block;
+  }
+  
+  .navbar a {
+    display: block;
+    padding: 8px;
+    border-radius: 10px;
+    border: 2px solid;
+    width: 100px;
+  }
+  
+  .alert-bar {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: #03cd0d;
+    min-width: 100%;
+    padding: 6px;
+    text-align: center;
+  }
+  
+  .alert-bar h3 {
+    margin: 0;
+    padding: 0;
+  }

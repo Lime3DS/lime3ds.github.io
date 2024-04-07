@@ -146,52 +146,52 @@ p {
 }
 
 .dropbtn {
-background-color: #111111;
-color: white;
-padding: 12px 17px;
-font-size: 16px;
-border: none;
-border-radius: 10px;
-cursor: pointer;
-top: 50%;
-display: inline;
-position: absolute;
+  background-color: #333333;
+  color: white;
+  padding: 12px 17px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  top: 50%;
+  display: inline;
+  position: absolute;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-background-color: #333333;
+  background-color: #111111;
 }
 
 .dropdown {
-position: absolute;
-margin-left: 0.5em;
-left: 0;
+  position: absolute;
+  margin-left: 0.5em;
+  left: 0;
 }
 
 .dropdown-content {
-display: none;
-position: absolute;
-background-color: #f1f1f1;
-min-width: 160px;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-z-index: 1;
-top: 40px;
-left: 0;
-border-radius: 10px;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 40px;
+  left: 0;
+  border-radius: 10px;
 }
 
 .dropdown-content a {
-color: black;
-padding: 12px 16px;
-text-decoration: none;
-display: block;
-border-radius: 10px;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
 }
 
 .dropdown-content a:hover {
-background-color: #ddd;
+  background-color: #ddd;
 }
 
 .dropdown:hover .dropdown-content {
-display: block;
+  display: block;
 }

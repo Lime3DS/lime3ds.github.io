@@ -101,8 +101,9 @@ body {
   border-radius: 20px;
   margin: 20px;
   display: flex;
-  bottom: 12px;
-  position: absolute;
+  align-items: center;
+  justify-content: center;
+  bottom: 0px;
 }
 
 #content {

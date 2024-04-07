@@ -17,9 +17,9 @@ pre code {
 }
 
 .table-of-contents {
-    position: absolute;
-    right: 15%;
+    position: relative;
     top: 20%;
+    margin: 1em;
 }
 
 .table-of-contents ul {

@@ -102,6 +102,7 @@ body {
   margin: 20px;
   display: flex;
   bottom: 12px;
+  position: absolute;
 }
 
 #content {

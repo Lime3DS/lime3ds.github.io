@@ -22,7 +22,6 @@ a:hover {
   color: #535bf2;
 }
 
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -32,7 +31,7 @@ h1 {
   max-width: 1280px;
   max-height: 100vh;
   margin: 0 auto;
-  padding: 2rem;
+  border: none;
 }
 
 body {
@@ -43,7 +42,7 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  border: none;
 }
 
 #header {
@@ -93,6 +92,20 @@ body {
 .box-img {
   width: 35px;
   margin-left: 10px;
+}
+
+#msgbox {
+  position: absolute;
+  background: linear-gradient(to bottom right, lime, darkgreen);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0px;
 }
 
 #content {

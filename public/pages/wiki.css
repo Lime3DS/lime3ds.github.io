@@ -18,8 +18,8 @@ pre code {
 
 .table-of-contents {
     position: relative;
-    top: 20%;
-    margin: 1em;
+    top: 10%;
+    padding: 10px;
 }
 
 .table-of-contents ul {
@@ -33,62 +33,19 @@ pre code {
 }
 
 .wiki-content {
-    position: absolute;
+    position: relative;
     width: max-content;
     height: fit-content;
-    left: 5%;
-    top: 10%;
+    margin: 2em;
     display: inline-block;
 }
 
 .wiki-content .content {
-    position: absolute;
+    position: relative;
     height: 100%;
     width: max-content;
     height: max-content;
-    left: 0%;
+    margin: 2em;
     float: left;
     clear: both;
 }
-.navbar {
-    position: absolute;
-    top: 4%;
-    left: 0%;
-    background-color: #222222;
-    min-width: 101%;
-    padding: 5px;
-    text-align: center;
-  }
-  
-  .navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar li {
-    display: inline-block;
-  }
-  
-  .navbar a {
-    display: block;
-    padding: 8px;
-    border-radius: 10px;
-    border: 2px solid;
-    width: 100px;
-  }
-  
-  .alert-bar {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    background-color: #03cd0d;
-    min-width: 100%;
-    padding: 6px;
-    text-align: center;
-  }
-  
-  .alert-bar h3 {
-    margin: 0;
-    padding: 0;
-  }

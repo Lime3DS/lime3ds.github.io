@@ -29,7 +29,7 @@ h1 {
 
 #app {
   max-width: 1280px;
-  /* max-height: 100vh; */
+  max-height: 100vh;
   margin: 0 auto;
 }
 
@@ -93,6 +93,7 @@ body {
 }
 
 #msgbox {
+  position: absolute;
   background: linear-gradient(to bottom right, lime, darkgreen);
   color: white;
   text-align: center;

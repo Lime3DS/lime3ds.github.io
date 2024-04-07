@@ -58,6 +58,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 38px;
+  top: 0;
 }
 
 #header h1 {

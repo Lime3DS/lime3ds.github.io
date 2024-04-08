@@ -20,6 +20,7 @@ pre code {
     position: relative;
     top: 10%;
     margin: 1.2em;
+    padding: 2.5%;
 }
 
 .table-of-contents ul {
@@ -48,4 +49,18 @@ pre code {
     margin: 2em;
     float: left;
     clear: both;
+}
+
+.wiki-main-page {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+} 
+
+.lime-logo {
+    position: absolute;
+    top: 1%;
+    right: 1%;
 }

@@ -49,13 +49,14 @@ li {
     position: absolute;
     top: 10%;
     left: 20%;
-    width: 45%;
+    width: 50%;
     display: flex;
     justify-content: center;
 } 
 
 .wiki-main-page .content {
     display: inline-block;
+    width: 100%;
 }
 
 .lime-logo {

@@ -201,3 +201,7 @@ p {
   top: 0.75%;
   right: 1%;
 }
+
+.compatibility-list {
+  padding-left: 50px;
+}

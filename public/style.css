@@ -195,3 +195,9 @@ p {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.lime-logo {
+  position: absolute;
+  top: 0.75%;
+  right: 1%;
+}

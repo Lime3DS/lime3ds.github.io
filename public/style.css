@@ -124,7 +124,7 @@ body {
   margin-bottom: 0.5em;
 }
 
-h3::after {
+.index-h3 h3::after {
   content: '';
   display: block;
   width: 80%;

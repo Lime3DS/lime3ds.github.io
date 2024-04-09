@@ -1,0 +1,60 @@
+code {
+    background-color: #282c34;
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #abb2bf;
+}
+
+li {
+    padding: 2px;
+}
+
+.table-of-contents {
+    position: relative;
+    top: 10%;
+    margin: 1.2em;
+    padding: 2.5%;
+}
+
+.table-of-contents ul {
+    padding-top: 5px;
+}
+
+.table-of-contents li {
+    float: left;
+    clear: both;
+    padding: 1px;
+}
+
+.wiki-content {
+    position: relative;
+    width: max-content;
+    height: fit-content;
+    margin: 2em;
+    display: inline-block;
+}
+
+.wiki-content .content {
+    position: relative;
+    height: 100%;
+    width: max-content;
+    height: max-content;
+    margin: 2em;
+    float: left;
+    clear: both;
+}
+
+.wiki-main-page {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+} 
+
+.wiki-main-page .content {
+    display: inline-block;
+    width: 100%;
+}

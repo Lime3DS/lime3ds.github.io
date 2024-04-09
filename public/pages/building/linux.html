@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lime3DS</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../wiki.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+    <div id="app">
+      <div id="header">
+        <div class="dropdown">
+          <button class="dropbtn">Menu</button>
+          <div class="dropdown-content">
+            <a href="../../index.html">Home</a>
+            <a href="../wiki.html">Wiki</a>
+          </div>
+        </div>
+        <div id="link_tray">
+            <a href="https://github.com/Lime3DS/Lime-3DS-Emulator">GitHub</a> |
+            <a href="https://discord.com/invite/4ZjMpAp3M6">Discord</a> |
+            <a href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Releases</a>
+        </div>
+        <img class="lime-logo" src="../../lime.svg" width="45px">
+      </div> 
+        <div class="wiki-content">
+            <div class="content">
+                <h1>Building for Linux</h1>
+                <h2>What you will need:</h2>
+                <ul>
+                    <li>Dependencies:</li>
+                    <ul>
+                        <li>SDL2</li>
+                        <ul>
+                            <li>Deb: <code class="language-bash">sudo apt install libsdl2-dev</code></li>
+                            <li>Arch: <code>pacman -S sdl2</code></li>
+                            <li>Fedora: <code>sudo dnf install SDL2-devel</code></li>
+                            <li>OpenSUSE: <code>zypper in libSDL2-devel</code></li>
+                        </ul>
+                        <li>OpenSSL (Optional)</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install libssl-dev</code></li>
+                            <li>Arch: <code>pacman -S openssl-1.0</code></li>
+                            <li>Fedora: <code>sudo dnf install openssl-devel</code></li>
+                            <li>OpenSUSE: <code>zypper in openssl-devel</code></li>
+                        </ul>
+                        <li>Qt 6.2+</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install qt6-base-dev qt6-base-private-dev qt6-multimedia-dev</code></li>
+                            <ul>
+                                <li>For Translation Support: <code>apt install qt6-l10n-tools qt6-tools-dev qt6-tools-dev-tools</code></li>
+                                <li>For WrapOpenGL Errors: <code>apt install libgl-dev</code></li>
+                            </ul>
+                            <li>Arch: <code>pacman -S qt6-base qt6-multimedia qt6-multimedia-ffmpeg</code></li>
+                            <ul>
+                                <li>You also need a multimedia backend: <code>qt6-multimedia-ffmpeg</code> or <code>qt6-multimedia-gstreamer</code></li>
+                            </ul>
+                            <li>Fedora: <code>sudo dnf install qt6-qtbase-devel qt6-qtbase-private-devel qt6-qtmultimedia-devel</code></li>
+                            <li>OpenSUSE: <code>zypper in qt6-base qt6-multimedia</code></li>
+                        </ul>
+                        <li>PortAudio</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install libasound-dev</code></li>
+                            <li>Fedora: <code>sudo dnf install portaudio-devel</code></li>
+                            <li>OpenSUSE Leap 15: <code>zypper in portaudio-devel</code></li>
+                            <li>OpenSUSE Tumbleweed: <code>zypper in portaudio-devel</code></li>
+                        </ul>
+                        <li>XORG</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install xorg-dev libx11-dev libxext-dev</code></li>
+                            <li>Fedora: <code>sudo dnf install xorg-x11-server-devel libX11-devel libXext-devel</code></li>
+                            <li>OpenSUSE Leap 15: <code>zypper in xorg-x11-util-devel libX11-devel libXext-devel</code></li>
+                            <li>OpenSUSE Tumbleweed: <code>zypper in xorg-x11-util-devel libX11-devel libXext-devel</code></li>
+                        </ul>
+                        <li>JACK Audio Connection Kit</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install jackd</code></li>
+                            <li>Fedora: <code>sudo dnf install jack-audio-connection-kit-devel</code></li>
+                            <li>OpenSUSE Leap 15: <code>zypper in libjack-devel</code></li>
+                            <li>OpenSUSE Tumbleweed: <code>zypper in libjack-devel</code></li>
+                        </ul>
+                        <li>PipeWire</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install libpipewire-0.3-dev</code></li>
+                            <li>Fedora: <code>sudo dnf install pipewire-devel</code></li>
+                            <li>OpenSUSE Leap 15: <code>zypper in pipewire-devel</code></li>
+                            <li>OpenSUSE Tumbleweed: <code>zypper in pipewire-devel</code></li>
+                        </ul>
+                        <li>sndio (Optional)</li>
+                        <ul>
+                            <li>Deb: <code>sudo apt install libsndio-dev</code></li>
+                            <li>Fedora: <code>sudo dnf -y copr enable andykimpe/shadow && sudo dnf -y install sndio</code></li>
+                            <li>OpenSUSE Leap 15: <code>zypper in sndio-devel</code></li>
+                            <li>OpenSUSE Tumbleweed: <code>zypper in sndio-devel</code></li>
+                        </ul>
+                        <li>Gnome ESound (Optional)</li>
+                        <ul>
+                            <li>Deb: <code>echo "esound require build use source code https://download.gnome.org/sources/esound/"</code></li>
+                            <li>Fedora: <code>sudo dnf install esound-devel</code></li>
+                            <li>OpenSUSE Leap 15: <code>zypper in libesd0-devel</code></li>
+                            <li>OpenSUSE Tumbleweed: <code>zypper in libesd0-devel</code></li>
+                        </ul>
+                        <li>Compiler (You only need one of these)</li>
+                        <ul>
+                            <li>GCC 11.0+</li>
+                            <ul>
+                                <li>Deb: <code>apt install build-essential</code></li>
+                                <li>Arch: <code>pacman -S base-devel</code></li>
+                                <li>Fedora: <code>dnf install gcc-c++</code></li>
+                                <li>OpenSUSE: <code>zypper in gcc-c++</code></li>
+                            </ul>
+                            <li>Clang 15.0+</li>
+                            <ul>
+                                <li>Deb: <code>apt install clang clang-format libc++-dev</code></li>
+                                <ul>
+                                    <li>Note for Ubuntu users: Clang 15 is available only from 22.10 onward. For earlier distro versions, see: <a href="https://apt.llvm.org/">https://apt.llvm.org/</a></li>
+                                </ul>
+                                <li>Arch: <code>pacman -S clang</code>, <code>libc++</code> is in the AUR. Use pacaur or yaourt to install it.</li>
+                                <li>Fedora: <code>dnf install clang libcxx-devel</code></li>
+                                <li>OpenSUSE: <code>zypper in clang</code></li>
+                            </ul>
+                        </ul>
+                        <li>CMake 3.20+</li>
+                        <ul>
+                            <li>Deb: <code>apt install cmake</code></li>
+                            <li>Arch: <code>pacman -S cmake</code></li>
+                            <li>Fedora: <code>dnf install cmake</code></li>
+                            <li>OpenSUSE: <code>zypper in cmake extra-cmake-modules</code></li>
+                        </ul>
+                    </ul>
+                </ul>
+                
+                <h1>Cloning Lime3DS</h1>
+                <pre>
+                    <code class="language-bash">
+    git clone --recursive https://github.com/Lime3DS/Lime3DS
+    cd Lime3DS
+                    </code>
+                </pre>
+                <h1>Building</h1>
+                <h2>Building Lime in Debug Mode (Slow)</h2>
+                <h3>Using GCC</h3>
+                <pre>
+                    <code class="language-bash">
+    mkdir build
+    cd build
+    cmake ../
+    cmake --build . -- -j"$(nproc)"
+    sudo make install (optional)
+                    </code>
+                </pre>
+                <p>Optionally, you can use “cmake -i ..” to adjust various options (e.g. disable the Qt GUI).</p>
+                <h3>Using Clang</h3>
+                <pre>
+                    <code class="language-bash">
+    mkdir build
+    cd build
+    cmake .. -DCMAKE_CXX_COMPILER=clang++-5.0 \
+        -DCMAKE_C_COMPILER=clang-5.0 \
+        -DCMAKE_CXX_FLAGS="-O2 -g -stdlib=libc++"
+    cmake --build . -- -j"$(nproc)"
+    sudo make install (optional)
+                    </code>
+                </pre>
+                <p>If you get a weird compile error related to std::span conversions, make sure you are using clang and libc++ 15 or up. This is an issue with libc++ 14.</p>
+                <br>
+                <h2>Building Lime in Release Mode (Optimized)</h2>
+                <pre>
+                    <code class="language-bash">
+    mkdir build
+    cd build
+    cmake .. -DCMAKE_BUILD_TYPE=Release
+    cmake --build . -- -j"$(nproc)"
+    sudo make install (optional)
+                    </code>
+                </pre>
+                <br>
+                <h2>Building Lime with Debug Symbols</h2>
+                <pre>
+                    <code class="language-bash">
+    mkdir build
+    cd build
+    cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    cmake --build . -- -j"$(nproc)"
+    sudo make install (optional)
+                    </code>
+                </pre>
+                <br>
+                <h2>Running without installing</h2>
+                <p>After building, the binaries <code>lime</code>, <code>lime-qt</code> and <code>lime-room</code> (depending on your build options) will end up in build/bin/.</p>
+                <pre>
+                    <code class="language-bash">
+    # SDL
+    cd build/bin/
+    ./citra
+    
+    # Qt
+    cd build/bin/
+    ./citra-qt
+    
+    # Dedicated room
+    cd build/bin/
+    ./citra-room
+                    </code>
+                </pre>
+                <br>
+                <h2>Debugging</h2>
+                <pre>
+                    <code class="language-bash">
+    cd data
+    gdb ../build/bin/citra-qt
+    (gdb) run
+
+    (gdb) bt
+                    </code>
+                </pre>
+                <br>
+                <h2>Install new Qt Version</h2>
+                <p>If your distribution’s version of Qt is too old, there are a few places you may be able to find newer versions.</p>
+                <ul>
+                    <li>This Ubuntu PPA contains backports of Qt 6 to various older versions: <a href="https://launchpad.net/~savoury1/+archive/ubuntu/qt-6-2">https://launchpad.net/~savoury1/+archive/ubuntu/qt-6-2</a></li>
+                    <li>This unofficial CLI installer allows downloading and installing the latest first-party builds of Qt to your system <br>
+                        (whether it works against your distribution may vary): <a href="https://github.com/miurahr/aqtinstall">https://github.com/miurahr/aqtinstall</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

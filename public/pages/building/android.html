@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lime3DS</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../wiki.css">
+
+    <style>
+        body {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+      <div id="header">
+        <div class="dropdown">
+          <button class="dropbtn">Menu</button>
+          <div class="dropdown-content">
+            <a href="../../index.html">Home</a>
+            <a href="../wiki.html">Wiki</a>
+          </div>
+        </div>
+        <div id="link_tray">
+            <a href="https://github.com/Lime3DS/Lime-3DS-Emulator">GitHub</a> |
+            <a href="https://discord.com/invite/4ZjMpAp3M6">Discord</a> |
+            <a href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Releases</a>
+        </div>
+        <img class="lime-logo" src="../../lime.svg" width="45px">
+      </div>
+        <div class="wiki-content">
+            <div class="content">
+                <h1>Building for Android</h1>
+                <h2>What you will need:</h2>
+                <ul class="dependencies">
+                    <li class="dependencies"><a href="https://developer.android.com/studio">Android Studio</a></li>
+                    <li class="dependencies"><a href="https://developer.android.com/studio/projects/install-ndk#default-version">NDK and CMake</li>
+                    <li class="dependencies"><a href="https://git-scm.com/downloads">Git</a></li>
+                </ul>
+                <br>
+                <h1 style="padding-top: 20px;">Cloning Lime3DS</h1>
+                <pre>
+                    <code class="code-float">git clone --recursive https://github.com/Lime3DS/Lime3DS</code> <br>
+                </pre>
+                <h1>Building</h1>
+                <ul class="dependencies">
+                    <li class="dependencies">Start Android Studio and on the startup dialog select <code>Open</code>.</li>
+                    <li class="dependencies">Navigate to the <code>citra/src/android</code> directory and click on <code>Ok</code></li>
+                    <li class="dependencies">In <code>Build > Select Build Variant</code>, select <code>release</code> or <code>relWithDebInfo</code> as the "Active build variant"</li>
+                    <li class="dependencies">Build the project with <code>Build > Make Project</code> or run it on an Android device with <code>Run > Run 'app'</code></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

@@ -29,10 +29,11 @@ li {
 
 .wiki-content {
     position: relative;
-    width: max-content;
+    width: 100vw;
     height: fit-content;
     margin: 2em;
     display: inline-block;
+    overflow-wrap: normal;
 }
 
 .wiki-content .content {
@@ -57,4 +58,10 @@ li {
 .wiki-main-page .content {
     display: inline-block;
     width: 100%;
+}
+
+@media (pointer:none), (pointer:coarse) {
+    .wiki-main-page {
+        top: 45%;
+    } 
 }

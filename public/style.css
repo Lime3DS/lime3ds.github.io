@@ -28,8 +28,8 @@ h1 {
 }
 
 #app {
-  max-width: 100%;
-  max-height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   margin: 0 auto;
   border: none;
 }
@@ -43,6 +43,7 @@ body {
   place-items: center;
   min-width: 320px;
   border: none;
+  min-height: 100vh;
 }
 
 #header {

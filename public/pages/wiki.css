@@ -59,3 +59,9 @@ li {
     display: inline-block;
     width: 100%;
 }
+
+@media (pointer:none), (pointer:coarse) {
+    .wiki-main-page {
+        top: 45%;
+    } 
+}

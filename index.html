@@ -114,7 +114,6 @@
             top: 50%;
             display: inline;
             position: absolute;
-            transition: background-color 0.3s ease;
         }
 
         .dropbtn:hover,
@@ -126,10 +125,6 @@
             position: absolute;
             margin-left: 0.5em;
             left: 0;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            transform-origin: top;
-            transform: scale(0.8);
         }
 
         .dropdown-content {
@@ -142,6 +137,10 @@
             top: 40px;
             left: 0;
             border-radius: 10px;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform-origin: top;
         }
 
         .dropdown-content a {
@@ -158,9 +157,6 @@
 
         .dropdown:hover .dropdown-content {
             display: block;
-        }
-
-        .dropdown:hover {
             opacity: 1;
             transform: scale(1);
         }

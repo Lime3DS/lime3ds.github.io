@@ -175,11 +175,11 @@
         }
 
         #container:hover #object {
-            content: url('smile.png'); /* Replace the face with smile.png when hovering */
+            content: url('lime/smile.png'); /* Replace the face with smile.png when hovering */
         }
 
         #container:not(:hover) #object {
-            content: url('face.png'); /* Show the original face.png when not hovering */
+            content: url('lime/face.png'); /* Show the original face.png when not hovering */
         }
     </style>
 </head>
@@ -200,8 +200,8 @@
         <a href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Releases</a>
     </div>
     <div id="container">
-        <img id="container" src="lime.png" alt="Lime">
-        <img id="object" src="face.png" alt="Eyes">
+        <img id="container" src="lime/lime.png" alt="Lime">
+        <img id="object" src="lime/face.png" alt="Eyes">
     </div>
 </div>
 
@@ -239,7 +239,7 @@
 </div>
 <script>
     // Preload images
-    var images = ['face.png', 'smile.png'];
+    var images = ['lime/face.png', 'lime/smile.png'];
     preloadImages(images);
 
     function preloadImages(array) {

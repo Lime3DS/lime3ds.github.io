@@ -77,31 +77,30 @@
                     titleCell.textContent = element.title;
                     const compatibilityCell = row.insertCell();
 
-                    // Set text content and background color based on compatibility value
                     switch (element.compatibility) {
                         case 0:
                             compatibilityCell.textContent = 'Perfect';
-                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`; // Red
+                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`;
                             break;
                         case 1:
                             compatibilityCell.textContent = 'Great';
-                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`; // Slightly darker Red
+                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`;
                             break;
                         case 2:
                             compatibilityCell.textContent = 'Okay';
-                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`; // Slightly darker Red
+                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`;
                             break;
                         case 3:
                             compatibilityCell.textContent = 'Bad';
-                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`; // Slightly darker Red
+                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`;
                             break;
                         case 4:
                             compatibilityCell.textContent = 'Intro/Menu';
-                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`; // Slightly darker Red
+                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`;
                             break;
                         case 5:
                             compatibilityCell.textContent = 'Won\'t Boot';
-                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`; // Slightly darker Red
+                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`;
                             break;
                         case 99:
                             compatibilityCell.textContent = 'Not Tested';

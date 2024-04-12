@@ -2,24 +2,13 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
-#searchInput {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 12px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
+/* start Compatability List Styles start */
 
 table {
-  width: 80%;
-  margin: 0 auto;
   border-collapse: collapse;
-}
-
-table, th, td {
-  border: 1px solid #333;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
 }
 
 th, td {
@@ -31,7 +20,71 @@ tr:nth-child(even) {
   background-color: #444;
 }
 
-th {
-  background-color: #222;
-  color: white;
+td:nth-child(2) {
+  display: flex;
+  align-items: center;
 }
+
+td:nth-child(2)::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+
+td:nth-child(2)[data-compatibility="0"]::before {
+  background-color: #0000ff; /* Perfect - Blue */
+}
+
+td:nth-child(2)[data-compatibility="1"]::before {
+  background-color: #008000; /* Great - Green */
+}
+
+td:nth-child(2)[data-compatibility="2"]::before {
+  background-color: #808000; /* Okay - Olive */
+}
+
+td:nth-child(2)[data-compatibility="3"]::before {
+  background-color: #ffff00; /* Bad - Yellow */
+}
+
+td:nth-child(2)[data-compatibility="4"]::before {
+  background-color: #ff0000; /* Intro/Menu - Red */
+}
+
+td:nth-child(2)[data-compatibility="5"]::before {
+  background-color: #808080; /* Won't Boot - Gray */
+}
+
+td:nth-child(2)[data-compatibility="99"]::before {
+  background-color: #000000; /* Not Tested - Black */
+}
+
+@media (max-width: 600px) {
+  table {
+    font-size: 14px;
+  }
+}
+
+#search {
+  margin-bottom: 20px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #555;
+  color: #fff;
+}
+
+#searchInput:focus {
+  outline: none;
+  box-shadow: 0 0 5px #fff;
+}
+
+/* end Compatability List Styles end */

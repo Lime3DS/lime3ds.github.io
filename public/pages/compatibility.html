@@ -14,24 +14,24 @@
 </head>
 <body>
     <div id="app">
-      <div id="header">
-        <div class="dropdown">
-          <button class="dropbtn">Menu</button>
-          <div class="dropdown-content">
-            <a href="../index.html">Home</a>
-            <a href="./wiki.html">Wiki</a>
-          </div>
+        <div id="header">
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="../index.html">Home</a>
+                    <a href="./wiki.html">Wiki</a>
+                </div>
+            </div>
+            <div id="link_tray">
+                <a href="https://github.com/Lime3DS/Lime-3DS-Emulator">GitHub</a> |
+                <a href="https://discord.com/invite/4ZjMpAp3M6">Discord</a> |
+                <a href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Releases</a>
+            </div>
+            <img class="lime-logo" src="../lime.svg" width="45px">
         </div>
-        <div id="link_tray">
-            <a href="https://github.com/Lime3DS/Lime-3DS-Emulator">GitHub</a> |
-            <a href="https://discord.com/invite/4ZjMpAp3M6">Discord</a> |
-            <a href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Releases</a>
-        </div>
-        <img class="lime-logo" src="../lime.svg" width="45px">
-      </div>
 
-      <input type="text" id="searchInput" placeholder="Search for games...">
-      <div id="compatibilityTable"></div>
+        <input type="text" id="searchInput" placeholder="Search for games...">
+        <div id="compatibilityTable"></div>
     </div>
 
     <script>
@@ -112,6 +112,6 @@
         getCompatibilityList()
     </script>
 
-   <script type="module" src="../index.js"></script>
+    <script type="module" src="../index.js"></script>
 </body>
 </html>

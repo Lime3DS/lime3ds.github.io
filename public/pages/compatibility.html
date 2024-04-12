@@ -7,10 +7,6 @@
     <title>Lime3DS</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="wiki.css">
-    <link rel="stylesheet" href="compat.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -70,27 +66,35 @@
                     switch (element.compatibility) {
                         case 0:
                             compatibilityCell.textContent = 'Perfect';
+                            compatibilityCell.classList.add('perfect');
                             break;
                         case 1:
                             compatibilityCell.textContent = 'Great';
+                            compatibilityCell.classList.add('great');
                             break;
                         case 2:
                             compatibilityCell.textContent = 'Okay';
+                            compatibilityCell.classList.add('okay');
                             break;
                         case 3:
                             compatibilityCell.textContent = 'Bad';
+                            compatibilityCell.classList.add('bad');
                             break;
                         case 4:
                             compatibilityCell.textContent = 'Intro/Menu';
+                            compatibilityCell.classList.add('intro');
                             break;
                         case 5:
                             compatibilityCell.textContent = 'Won\'t Boot';
+                            compatibilityCell.classList.add('wont-boot');
                             break;
                         case 99:
                             compatibilityCell.textContent = 'Not Tested';
+                            compatibilityCell.classList.add('not-tested');
                             break;
                         default:
                             compatibilityCell.textContent = 'Unknown';
+                            compatibilityCell.classList.add('unknown');
                             break;
                     }
                 });

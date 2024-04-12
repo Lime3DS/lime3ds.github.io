@@ -14,24 +14,24 @@
 </head>
 <body>
     <div id="app">
-      <div id="header">
-        <div class="dropdown">
-          <button class="dropbtn">Menu</button>
-          <div class="dropdown-content">
-            <a href="../index.html">Home</a>
-            <a href="./wiki.html">Wiki</a>
-          </div>
+        <div id="header">
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="../index.html">Home</a>
+                    <a href="./wiki.html">Wiki</a>
+                </div>
+            </div>
+            <div id="link_tray">
+                <a href="https://github.com/Lime3DS/Lime-3DS-Emulator">GitHub</a> |
+                <a href="https://discord.com/invite/4ZjMpAp3M6">Discord</a> |
+                <a href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Releases</a>
+            </div>
+            <img class="lime-logo" src="../lime.svg" width="45px">
         </div>
-        <div id="link_tray">
-            <a href="https://github.com/Lime3DS/Lime-3DS-Emulator">GitHub</a> |
-            <a href="https://discord.com/invite/4ZjMpAp3M6">Discord</a> |
-            <a href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Releases</a>
-        </div>
-        <img class="lime-logo" src="../lime.svg" width="45px">
-      </div>
 
-      <input type="text" id="searchInput" placeholder="Search for games...">
-      <div id="compatibilityTable"></div>
+        <input type="text" id="searchInput" placeholder="Search for games...">
+        <div id="compatibilityTable"></div>
     </div>
 
     <script>
@@ -67,27 +67,36 @@
                     const titleCell = row.insertCell();
                     titleCell.textContent = element.title;
                     const compatibilityCell = row.insertCell();
+
+                    // Set text content and background color based on compatibility value
                     switch (element.compatibility) {
                         case 0:
                             compatibilityCell.textContent = 'Perfect';
+                            compatibilityCell.style.backgroundColor = '#00FF00'; // Green for Perfect
                             break;
                         case 1:
                             compatibilityCell.textContent = 'Great';
+                            compatibilityCell.style.backgroundColor = '#00CC00'; // Light Green for Great
                             break;
                         case 2:
                             compatibilityCell.textContent = 'Okay';
+                            compatibilityCell.style.backgroundColor = '#FFFF00'; // Yellow for Okay
                             break;
                         case 3:
                             compatibilityCell.textContent = 'Bad';
+                            compatibilityCell.style.backgroundColor = '#FFA500'; // Orange for Bad
                             break;
                         case 4:
                             compatibilityCell.textContent = 'Intro/Menu';
+                            compatibilityCell.style.backgroundColor = '#FF6600'; // Dark Orange for Intro/Menu
                             break;
                         case 5:
                             compatibilityCell.textContent = 'Won\'t Boot';
+                            compatibilityCell.style.backgroundColor = '#FF0000'; // Red for Won't Boot
                             break;
                         case 99:
                             compatibilityCell.textContent = 'Not Tested';
+                            compatibilityCell.style.backgroundColor = '#CCCCCC'; // Gray for Not Tested
                             break;
                         default:
                             compatibilityCell.textContent = 'Unknown';
@@ -104,6 +113,6 @@
         getCompatibilityList()
     </script>
 
-   <script type="module" src="../index.js"></script>
+    <script type="module" src="../index.js"></script>
 </body>
 </html>

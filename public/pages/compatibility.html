@@ -51,6 +51,15 @@
                 return json.filter(element => element.title.toLowerCase().includes(searchTerm));
             }
 
+            function getGradientColor(percentage) {
+                const color1 = [255, 0, 0]; // Red
+                const color2 = [220, 0, 0]; // Slightly darker Red
+                const r = Math.round((color2[0] - color1[0]) * percentage + color1[0]);
+                const g = Math.round((color2[1] - color1[1]) * percentage + color1[1]);
+                const b = Math.round((color2[2] - color1[2]) * percentage + color1[2]);
+                return `rgb(${r},${g},${b})`;
+            }
+
             function renderTable(filteredJson) {
                 compatibilityTable.innerHTML = '';
 
@@ -72,31 +81,31 @@
                     switch (element.compatibility) {
                         case 0:
                             compatibilityCell.textContent = 'Perfect';
-                            compatibilityCell.style.backgroundColor = '#00FF00'; // Green for Perfect
+                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`; // Red
                             break;
                         case 1:
                             compatibilityCell.textContent = 'Great';
-                            compatibilityCell.style.backgroundColor = '#00CC00'; // Light Green for Great
+                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`; // Slightly darker Red
                             break;
                         case 2:
                             compatibilityCell.textContent = 'Okay';
-                            compatibilityCell.style.backgroundColor = '#FFFF00'; // Yellow for Okay
+                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`; // Slightly darker Red
                             break;
                         case 3:
                             compatibilityCell.textContent = 'Bad';
-                            compatibilityCell.style.backgroundColor = '#FFA500'; // Orange for Bad
+                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`; // Slightly darker Red
                             break;
                         case 4:
                             compatibilityCell.textContent = 'Intro/Menu';
-                            compatibilityCell.style.backgroundColor = '#FF6600'; // Dark Orange for Intro/Menu
+                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`; // Slightly darker Red
                             break;
                         case 5:
                             compatibilityCell.textContent = 'Won\'t Boot';
-                            compatibilityCell.style.backgroundColor = '#FF0000'; // Red for Won't Boot
+                            compatibilityCell.style.background = `linear-gradient(to bottom right, ${getGradientColor(0)}, ${getGradientColor(1)})`; // Slightly darker Red
                             break;
                         case 99:
                             compatibilityCell.textContent = 'Not Tested';
-                            compatibilityCell.style.backgroundColor = '#CCCCCC'; // Gray for Not Tested
+                            compatibilityCell.style.backgroundColor = '#333'; // Dark Black
                             break;
                         default:
                             compatibilityCell.textContent = 'Unknown';

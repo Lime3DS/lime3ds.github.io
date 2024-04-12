@@ -7,6 +7,10 @@
     <title>Lime3DS</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="wiki.css">
+    <link rel="stylesheet" href="compat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -26,44 +30,75 @@
         <img class="lime-logo" src="../lime.svg" width="45px">
       </div>
 
-      <div class="compatibility-list"></div>
+      <input type="text" id="searchInput" placeholder="Search for games...">
+      <div id="compatibilityTable"></div>
     </div>
 
     <script>
         async function getCompatibilityList() {
-            const listDiv = document.querySelector(".compatibility-list")
-
             const res = await fetch("https://raw.githubusercontent.com/Lime3DS/Lime3DS/master/dist/compatibility_list/compatibility_list.json")
             const ogJson = await res.json()
-            const json = ogJson.sort()
-            json.forEach(element => {
-                const gameElement = document.createElement('h3')
-                switch (element.compatibility) {
-                    case 0:
-                        gameElement.innerHTML = `Game: ${element.title} | Compatibility: Perfect`
-                        break
-                    case 1:
-                        gameElement.innerHTML = `Game: ${element.title} | Compatibility: Great`
-                        break
-                    case 2:
-                        gameElement.innerHTML = `Game: ${element.title} | Compatibility: Okay`
-                        break;
-                    case 3:
-                        gameElement.innerHTML = `Game: ${element.title} | Compatibility: Bad`
-                        break;
-                    case 4:
-                        gameElement.innerHTML = `Game: ${element.title} | Compatibility: Intro/Menu`
-                        break;
-                    case 5:
-                        gameElement.innerHTML = `Game: ${element.title} | Compatibility: Won't Boot`
-                        break
-                    case 99:
-                        gameElement.innerHTML = `Game: ${element.title} | Compatibility: Not Tested`
-                        break;
-                    
-                }
-                listDiv.appendChild(gameElement)
+            const json = ogJson.sort((a, b) => a.title.localeCompare(b.title))
+
+            const compatibilityTable = document.getElementById('compatibilityTable');
+            const searchInput = document.getElementById('searchInput');
+
+            searchInput.addEventListener('input', () => {
+                renderTable(filterList(searchInput.value.toLowerCase()));
             });
+
+            function filterList(searchTerm) {
+                return json.filter(element => element.title.toLowerCase().includes(searchTerm));
+            }
+
+            function renderTable(filteredJson) {
+                compatibilityTable.innerHTML = '';
+
+                const table = document.createElement('table');
+                const headerRow = table.insertRow();
+                ['Title', 'Compatibility'].forEach(headerText => {
+                    const header = document.createElement('th');
+                    header.textContent = headerText;
+                    headerRow.appendChild(header);
+                });
+
+                filteredJson.forEach(element => {
+                    const row = table.insertRow();
+                    const titleCell = row.insertCell();
+                    titleCell.textContent = element.title;
+                    const compatibilityCell = row.insertCell();
+                    switch (element.compatibility) {
+                        case 0:
+                            compatibilityCell.textContent = 'Perfect';
+                            break;
+                        case 1:
+                            compatibilityCell.textContent = 'Great';
+                            break;
+                        case 2:
+                            compatibilityCell.textContent = 'Okay';
+                            break;
+                        case 3:
+                            compatibilityCell.textContent = 'Bad';
+                            break;
+                        case 4:
+                            compatibilityCell.textContent = 'Intro/Menu';
+                            break;
+                        case 5:
+                            compatibilityCell.textContent = 'Won\'t Boot';
+                            break;
+                        case 99:
+                            compatibilityCell.textContent = 'Not Tested';
+                            break;
+                        default:
+                            compatibilityCell.textContent = 'Unknown';
+                            break;
+                    }
+                });
+
+                compatibilityTable.appendChild(table);
+            }
+
+            renderTable(json);
         }
 
         getCompatibilityList()

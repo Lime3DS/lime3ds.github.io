@@ -13,12 +13,13 @@ body {
 }
 
 table {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   border-collapse: collapse;
 }
 
 table, th, td {
-  border: 1px solid #ddd;
+  border: 1px solid #333;
 }
 
 th, td {
@@ -27,10 +28,10 @@ th, td {
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #444;
 }
 
 th {
-  background-color: #4CAF50;
+  background-color: #222;
   color: white;
 }

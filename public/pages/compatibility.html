@@ -29,90 +29,87 @@
             </div>
             <img class="lime-logo" src="../lime.svg" width="45px">
         </div>
-
-        <input type="text" id="searchInput" placeholder="Search for games...">
-        <div id="compatibilityTable"></div>
+        <div id="search">
+            <input type="text" id="searchInput" placeholder="Search for a game...">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Game</th>
+                    <th>Compatibility</th>
+                </tr>
+            </thead>
+            <tbody class="compatibility-list"></tbody>
+        </table>
     </div>
-
     <script>
         async function getCompatibilityList() {
-            const res = await fetch("https://raw.githubusercontent.com/Lime3DS/Lime3DS/master/dist/compatibility_list/compatibility_list.json")
-            const ogJson = await res.json()
-            const json = ogJson.sort((a, b) => a.title.localeCompare(b.title))
+            const listBody = document.querySelector(".compatibility-list");
+            const res = await fetch("https://raw.githubusercontent.com/Lime3DS/Lime3DS/master/dist/compatibility_list/compatibility_list.json");
+            const ogJson = await res.json();
+            const json = ogJson.sort();
 
-            const compatibilityTable = document.getElementById('compatibilityTable');
-            const searchInput = document.getElementById('searchInput');
-
-            searchInput.addEventListener('input', () => {
-                renderTable(filterList(searchInput.value.toLowerCase()));
-            });
-
-            function filterList(searchTerm) {
-                return json.filter(element => element.title.toLowerCase().includes(searchTerm));
-            }
-
-            function renderTable(filteredJson) {
-                compatibilityTable.innerHTML = '';
-
-                const table = document.createElement('table');
-                const headerRow = table.insertRow();
-                ['Title', 'Compatibility'].forEach(headerText => {
-                    const header = document.createElement('th');
-                    header.textContent = headerText;
-                    headerRow.appendChild(header);
-                });
-
-                filteredJson.forEach(element => {
-                    const row = table.insertRow();
-                    const titleCell = row.insertCell();
-                    titleCell.textContent = element.title;
-                    const compatibilityCell = row.insertCell();
-
-                    // Set text content and background color based on compatibility value
+            function renderList(data) {
+                listBody.innerHTML = '';
+                data.forEach(element => {
+                    const row = document.createElement('tr');
+                    const gameCell = document.createElement('td');
+                    const compatibilityCell = document.createElement('td');
+                    gameCell.textContent = element.title;
+                    compatibilityCell.setAttribute('data-compatibility', element.compatibility);
                     switch (element.compatibility) {
                         case 0:
                             compatibilityCell.textContent = 'Perfect';
-                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #00FF00, #00F200)'; // Green for Perfect
                             break;
                         case 1:
                             compatibilityCell.textContent = 'Great';
-                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #00DD00, #00CF00)'; // Light Green for Great
                             break;
                         case 2:
                             compatibilityCell.textContent = 'Okay';
-                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #F2F200, #E6E600)'; // Yellow for Okay
                             break;
                         case 3:
                             compatibilityCell.textContent = 'Bad';
-                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #FFA500, #ED9A00)'; // Orange for Bad
                             break;
                         case 4:
                             compatibilityCell.textContent = 'Intro/Menu';
-                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #FF6600, #E65C00)'; // Dark Orange for Intro/Menu
                             break;
                         case 5:
-                            compatibilityCell.textContent = 'Won\'t Boot';
-                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #E60000, #D90000)'; // Red for Won't Boot
+                            compatibilityCell.textContent = "Won't Boot";
                             break;
                         case 99:
                             compatibilityCell.textContent = 'Not Tested';
-                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #777777, #666666)'; // Gray for Not Tested
-                            break;
-                        default:
-                            compatibilityCell.textContent = 'Unknown';
                             break;
                     }
+                    row.appendChild(gameCell);
+                    row.appendChild(compatibilityCell);
+                    listBody.appendChild(row);
                 });
-
-                compatibilityTable.appendChild(table);
             }
 
-            renderTable(json);
+            function searchGames() {
+                const searchTerm = document.getElementById('searchInput').value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                if (searchTerm.length === 0) {
+                    renderList(json);
+                } else {
+                    const filteredGames = json.filter(game => {
+                        const normalizedTitle = game.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                        return normalizedTitle.includes(searchTerm);
+                    });
+                    renderList(filteredGames);
+                }
+            }
+
+            let searchTimeout;
+            document.getElementById('searchInput').addEventListener('input', function () {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(searchGames, 300);
+            });
+
+            renderList(json);
         }
-
-        getCompatibilityList()
+        getCompatibilityList();
     </script>
-
     <script type="module" src="../index.js"></script>
 </body>
+
 </html>

@@ -3,44 +3,35 @@ body {
 }
 
 #searchInput {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 table {
-    width: 80%;
-    margin: 0 auto;
-    border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
 }
 
 table, th, td {
-    border: none;
+  border: 1px solid #333;
 }
 
-td {
-    color: white;
-    padding: 8px;
+th, td {
+  padding: 8px;
+  text-align: left;
 }
-
-.perfect { background-color: #4CAF50; } /* Green for Perfect */
-.great { background-color: #8BC34A; } /* Light green for Great */
-.okay { background-color: #FFEB3B; } /* Yellow for Okay */
-.bad { background-color: #FF5722; } /* Orange for Bad */
-.intro { background-color: #FF9800; } /* Darker orange for Intro/Menu */
-.wont-boot { background-color: #F44336; } /* Red for Won't Boot */
-.not-tested { background-color: #9E9E9E; } /* Gray for Not Tested */
-.unknown { background-color: #607D8B; } /* Gray for Unknown */
 
 tr:nth-child(even) {
-    background-color: #444;
+  background-color: #444;
 }
 
 th {
-    background-color: #222;
-    color: white;
+  background-color: #222;
+  color: white;
 }

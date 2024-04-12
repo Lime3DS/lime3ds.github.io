@@ -14,24 +14,24 @@
 </head>
 <body>
     <div id="app">
-      <div id="header">
-        <div class="dropdown">
-          <button class="dropbtn">Menu</button>
-          <div class="dropdown-content">
-            <a href="../index.html">Home</a>
-            <a href="./wiki.html">Wiki</a>
-          </div>
+        <div id="header">
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="../index.html">Home</a>
+                    <a href="./wiki.html">Wiki</a>
+                </div>
+            </div>
+            <div id="link_tray">
+                <a href="https://github.com/Lime3DS/Lime-3DS-Emulator">GitHub</a> |
+                <a href="https://discord.com/invite/4ZjMpAp3M6">Discord</a> |
+                <a href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Releases</a>
+            </div>
+            <img class="lime-logo" src="../lime.svg" width="45px">
         </div>
-        <div id="link_tray">
-            <a href="https://github.com/Lime3DS/Lime-3DS-Emulator">GitHub</a> |
-            <a href="https://discord.com/invite/4ZjMpAp3M6">Discord</a> |
-            <a href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Releases</a>
-        </div>
-        <img class="lime-logo" src="../lime.svg" width="45px">
-      </div>
 
-      <input type="text" id="searchInput" placeholder="Search for games...">
-      <div id="compatibilityTable"></div>
+        <input type="text" id="searchInput" placeholder="Search for games...">
+        <div id="compatibilityTable"></div>
     </div>
 
     <script>
@@ -67,27 +67,36 @@
                     const titleCell = row.insertCell();
                     titleCell.textContent = element.title;
                     const compatibilityCell = row.insertCell();
+
+                    // Set text content and background color based on compatibility value
                     switch (element.compatibility) {
                         case 0:
                             compatibilityCell.textContent = 'Perfect';
+                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #00FF00, #00F200)'; // Green for Perfect
                             break;
                         case 1:
                             compatibilityCell.textContent = 'Great';
+                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #00DD00, #00CF00)'; // Light Green for Great
                             break;
                         case 2:
                             compatibilityCell.textContent = 'Okay';
+                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #F2F200, #E6E600)'; // Yellow for Okay
                             break;
                         case 3:
                             compatibilityCell.textContent = 'Bad';
+                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #FFA500, #ED9A00)'; // Orange for Bad
                             break;
                         case 4:
                             compatibilityCell.textContent = 'Intro/Menu';
+                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #FF6600, #E65C00)'; // Dark Orange for Intro/Menu
                             break;
                         case 5:
                             compatibilityCell.textContent = 'Won\'t Boot';
+                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #E60000, #D90000)'; // Red for Won't Boot
                             break;
                         case 99:
                             compatibilityCell.textContent = 'Not Tested';
+                            compatibilityCell.style.backgroundImage = 'linear-gradient(to bottom right, #777777, #666666)'; // Gray for Not Tested
                             break;
                         default:
                             compatibilityCell.textContent = 'Unknown';
@@ -104,6 +113,6 @@
         getCompatibilityList()
     </script>
 
-   <script type="module" src="../index.js"></script>
+    <script type="module" src="../index.js"></script>
 </body>
 </html>

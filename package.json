@@ -1,14 +1,38 @@
 {
-  "name": "lime3ds.github.io",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "my-app",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite dev",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
   },
   "devDependencies": {
-    "vite": "^5.2.0"
+    "@fontsource/fira-mono": "^4.5.10",
+    "@neoconfetti/svelte": "^1.0.0",
+    "@sveltejs/adapter-auto": "^3.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "postcss-load-config": "^5.0.2",
+    "prettier": "^3.1.1",
+    "prettier-plugin-svelte": "^3.1.2",
+    "svelte": "^4.2.7",
+    "svelte-check": "^3.6.0",
+    "tailwindcss": "^3.3.6",
+    "tslib": "^2.4.1",
+    "vite": "^5.0.3"
+  },
+  "type": "module",
+  "dependencies": {
+    "bits-ui": "^0.21.3",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.2",
+    "tailwind-variants": "^0.2.1",
+    "typescript": "^5.4.5"
   }
 }

@@ -36,15 +36,11 @@ h1 {
 }
 
 body {
+  background-color: #111111;
   color: white;
   margin: 0;
   padding: 0;
   font-family: 'Ubuntu', sans-serif;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  border: none;
-  min-height: 100vh;
 }
 
 #header {
@@ -71,7 +67,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
+  margin: auto;
 }
 
 #link_tray a {
@@ -97,21 +93,6 @@ body {
   margin-left: 10px;
 }
 
-#msgbox {
-  position: absolute;
-  background: linear-gradient(to bottom right, lime, darkgreen);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  border-radius: 20px;
-  margin: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0px;
-  font-family: 'Ubuntu', sans-serif;
-}
-
 #content {
   background-color: #222222;
   color: white;
@@ -121,19 +102,19 @@ body {
   margin: 20px;
 }
 
-.index-h3 {
+h3 {
   position: relative;
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 0.5em;
 }
 
-.index-h3 h3::after {
+h3::after {
   content: '';
   display: block;
-  width: 80%;
-  height: 1px;
-  background-color: #999999;
+  width: 100%;
+  height: 0.33px;
+  background-color: rgba(153, 153, 153, 0.33);
   position: absolute;
   bottom: -0.5em;
   left: 0;
@@ -143,32 +124,33 @@ p {
   margin-top: 1.66em;
   margin-bottom: 3.25em;
 }
-      
+
 #box h2 {
   display: inline;
   margin-left: 10px;
 }
 
 .dropbtn {
-  background-color: #333333;
+  background-color: #111111;
   color: white;
   padding: 12px 17px;
   font-size: 16px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  top: 50%;
   display: inline;
   position: absolute;
+  left: 0;
+  margin-left: 5px;
   font-family: 'Ubuntu', sans-serif;
 }
 
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #111111;
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #333333;
 }
 
 .dropdown {
-  position: absolute;
   margin-left: 0.5em;
   left: 0;
   font-family: 'Ubuntu', sans-serif;
@@ -179,11 +161,16 @@ p {
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   top: 40px;
   left: 0;
   border-radius: 10px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform-origin: top;
+  margin-top: 10px;
 }
 
 .dropdown-content a {
@@ -200,14 +187,37 @@ p {
 
 .dropdown:hover .dropdown-content {
   display: block;
+  opacity: 1;
+  transform: scale(1);
 }
 
-.lime-logo {
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+#container {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#object {
   position: absolute;
-  top: 0.75%;
-  right: 1%;
+  width: 45px;
+  height: auto;
 }
 
-.compatibility-list {
-  padding-left: 50px;
+#container:hover {
+  transform: scale(1.1); /* Expand the lime when hovering */
+}
+
+#container:hover #object {
+  content: url('lime/smile.png'); /* Replace the face with smile.png when hovering */
+}
+
+#container:not(:hover) #object {
+  content: url('lime/face.png'); /* Show the original face.png when not hovering */
 }

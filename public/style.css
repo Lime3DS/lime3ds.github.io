@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -17,7 +17,7 @@ a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 a:hover {
   color: #535bf2;
@@ -39,7 +39,7 @@ body {
   color: white;
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -59,7 +59,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 38px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 #header h1 {
@@ -94,6 +94,7 @@ body {
 
 .box-img {
   width: 35px;
+  height: 35px;
   margin-left: 10px;
 }
 
@@ -109,7 +110,7 @@ body {
   align-items: center;
   justify-content: center;
   bottom: 0px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 #content {
@@ -129,7 +130,7 @@ body {
 }
 
 .index-h3 h3::after {
-  content: '';
+  content: "";
   display: block;
   width: 80%;
   height: 1px;
@@ -143,7 +144,7 @@ p {
   margin-top: 1.66em;
   margin-bottom: 3.25em;
 }
-      
+
 #box h2 {
   display: inline;
   margin-left: 10px;
@@ -160,10 +161,11 @@ p {
   top: 50%;
   display: inline;
   position: absolute;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:hover,
+.dropbtn:focus {
   background-color: #111111;
 }
 
@@ -171,7 +173,7 @@ p {
   position: absolute;
   margin-left: 0.5em;
   left: 0;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .dropdown-content {
@@ -179,7 +181,7 @@ p {
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   top: 40px;
   left: 0;

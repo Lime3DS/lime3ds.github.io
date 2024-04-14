@@ -82,10 +82,18 @@ body {
   text-align: center;
   padding: 20px;
   border-radius: 20px;
-  margin: 20px;
+  margin: 20px auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 175px;
+  width: 58%;
+}
+
+@media (max-width: 768px) {
+  #box {
+    width: 90.22%;
+  }
 }
 
 .box-img {
@@ -99,7 +107,14 @@ body {
   text-align: left;
   padding: 20px;
   border-radius: 20px;
-  margin: 20px;
+  margin: 20px auto;
+  width: 45%;
+}
+
+@media (max-width: 768px) {
+  #content {
+    width: 70%;
+  }
 }
 
 h3 {

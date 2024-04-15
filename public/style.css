@@ -1,4 +1,5 @@
 :root {
+  overflow-x: hidden;
   font-family: 'Ubuntu', sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -211,6 +212,12 @@ p {
   display: block;
   opacity: 1;
   transform: translateY(10px);
+}
+
+.lime-logo {
+  position: absolute !important;
+  right: 5px;
+  top: 5px;
 }
 
 #container {

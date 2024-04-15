@@ -214,6 +214,12 @@ p {
   transform: translateY(10px);
 }
 
+.lime-logo {
+  position: absolute !important;
+  right: 5px;
+  top: 5px;
+}
+
 #container {
   position: relative;
   width: 45px;

@@ -95,18 +95,15 @@
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-    const baseUrl = 'https://github.com/Lime3DS/Lime3DS/releases/latest';
+    const apiUrl = 'https://api.github.com/repos/Lime3DS/Lime3DS/releases/latest';
 
-    async function getFileUrl(ending) {
-        const response = await fetch(baseUrl);
-        const text = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(text, 'text/html');
-        const links = doc.querySelectorAll('a');
+    async function getAssetUrl(ending) {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
         
-        for (const link of links) {
-            if (link.href.endsWith(ending)) {
-                return link.href;
+        for (const asset of data.assets) {
+            if (asset.name.endsWith(ending)) {
+                return asset.browser_download_url;
             }
         }
         return null;
@@ -122,7 +119,7 @@
     }
 
     document.getElementById('androidButton').addEventListener('click', async () => {
-        const url = await getFileUrl('-android-universal.apk');
+        const url = await getAssetUrl('-android-universal.apk');
         if (url) {
             downloadFile(url);
         } else {
@@ -131,7 +128,7 @@
     });
 
     document.getElementById('windowsButton').addEventListener('click', async () => {
-        const url = await getFileUrl('-windows-msys2.zip');
+        const url = await getAssetUrl('-windows-msys2.zip');
         if (url) {
             downloadFile(url);
         } else {
@@ -140,7 +137,7 @@
     });
 
     document.getElementById('linuxButton').addEventListener('click', async () => {
-        const url = await getFileUrl('-linux-appimage.tar.gz');
+        const url = await getAssetUrl('-linux-appimage.tar.gz');
         if (url) {
             downloadFile(url);
         } else {
@@ -149,7 +146,7 @@
     });
 
     document.getElementById('macosButton').addEventListener('click', async () => {
-        const url = await getFileUrl('-macos-universal.tar.gz');
+        const url = await getAssetUrl('-macos-universal.tar.gz');
         if (url) {
             downloadFile(url);
         } else {

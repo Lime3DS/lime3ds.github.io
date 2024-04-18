@@ -37,6 +37,7 @@ body {
   left: 0;
   margin-left: 5px;
   font-family: 'Ubuntu', sans-serif;
+  display: inline;
 }
 
 .dropbuild:hover,
@@ -45,9 +46,8 @@ body {
 }
 
 .dropbdown {
-  margin-left: 0.5em;
-  left: 0;
   font-family: 'Ubuntu', sans-serif;
+  display: inline;
 }
 
 .dropbdown-content {

@@ -39,7 +39,13 @@
   <div id="bbcon">
     <button class="build-button" id="androidButton">Android</button>
     <button class="build-button" id="linuxButton">Linux</button> <br>
-    <button class="build-button" id="windowsButton">Windows</button>
+    <div class="dropdown" onmouseenter="toggleDropdown(true)" onmouseleave="toggleDropdown(false)">
+        <button class="dropbtn">Windows</button>
+        <div class="dropdown-content" id="dropdownContent">
+            <a id="windowsButton1">MSVC</a>
+            <a id="windowsButton2">MSYS2</a>
+        </div>
+    </div>
     <button class="build-button" id="macosButton">MacOS</button>
   </div>
 </div>
@@ -127,7 +133,16 @@
         }
     });
 
-    document.getElementById('windowsButton').addEventListener('click', async () => {
+    document.getElementById('windowsButton1').addEventListener('click', async () => {
+        const url = await getAssetUrl('-windows-msvc.zip');
+        if (url) {
+            downloadFile(url);
+        } else {
+            alert('File not found');
+        }
+    });
+
+    document.getElementById('windowsButton2').addEventListener('click', async () => {
         const url = await getAssetUrl('-windows-msys2.zip');
         if (url) {
             downloadFile(url);

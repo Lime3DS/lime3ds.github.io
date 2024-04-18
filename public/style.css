@@ -196,12 +196,12 @@ p {
   border-radius: 10px;
 }
 
-.dropdown-content .cont-sec a {
+.dropdown-content a.cont-sec {
   padding-top: none;
   padding-bottom: none;
 }
 
-.dropdown-content .cont-sec a:hover {
+.dropdown-content a.cont-sec:hover {
   background-color: #f1f1f1;
 }
 

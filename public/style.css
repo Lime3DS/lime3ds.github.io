@@ -244,3 +244,72 @@ p {
 #container:not(:hover) #object {
   content: url('lime/face.png'); /* Show the original face.png when not hovering */
 }
+
+
+.text-version {
+  display: flex;
+  flex-direction:column-reverse;
+flex-wrap: wrap;
+align-content: center;
+}
+
+
+.download {
+  display: flex;
+  align-items: normal;
+  justify-content: space-between;
+  padding-left: 150px;
+  padding-right: 150px;
+  
+}
+
+
+.macOS {
+  background: linear-gradient(to bottom right, lime, darkgreen);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.windows {
+  background: linear-gradient(to bottom right, lime, darkgreen);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+.androids {
+  background: linear-gradient(to bottom right, lime, darkgreen);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: #ddd;
+}
+.linux {
+  background: linear-gradient(to bottom right, lime, darkgreen);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.link {
+  color: #f1f1f1;
+}

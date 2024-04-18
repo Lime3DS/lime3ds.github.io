@@ -39,7 +39,7 @@
   <div id="bbcon">
     <button class="build-button" id="androidButton">Android</button>
     <button class="build-button" id="linuxButton">Linux</button> <br>
-    <div class="dropbdown" onmouseenter="toggleDropdown(true)" onmouseleave="toggleDropdown(false)">
+    <div class="dropbdown" onmouseenter="toggleDropbdown(true)" onmouseleave="toggleDropbdown(false)">
         <button class="dropbuild">Windows</button>
         <div class="dropbdown-content" id="dropbdownContent">
             <a id="windowsButton1">MSVC</a>
@@ -70,14 +70,31 @@
         if (open) {
             dropdownContent.style.display = 'block';
             setTimeout(function() {
-                dropbdownContent.style.opacity = 1;
-                dropbdownContent.style.transform = 'scale(1)';
+                dropdownContent.style.opacity = 1;
+                dropdownContent.style.transform = 'scale(1)';
             }, 10); // Adding a slight delay for smoother animation
         } else {
-            dropbdownContent.style.opacity = 0;
-            dropbdownContent.style.transform = 'scale(0.8)';
+            dropdownContent.style.opacity = 0;
+            dropdownContent.style.transform = 'scale(0.8)';
             setTimeout(function() {
-                dropbdownContent.style.display = 'none';
+                dropdownContent.style.display = 'none';
+            }, 300); // Same duration as the transition in CSS
+        }
+    }
+     
+    function toggleDropbdown(open) {
+        var dropdownContent = document.getElementById('dropbdownContent');
+        if (open) {
+            dropdownContent.style.display = 'block';
+            setTimeout(function() {
+                dropdownContent.style.opacity = 1;
+                dropdownContent.style.transform = 'scale(1)';
+            }, 10); // Adding a slight delay for smoother animation
+        } else {
+            dropdownContent.style.opacity = 0;
+            dropdownContent.style.transform = 'scale(0.8)';
+            setTimeout(function() {
+                dropdownContent.style.display = 'none';
             }, 300); // Same duration as the transition in CSS
         }
     }

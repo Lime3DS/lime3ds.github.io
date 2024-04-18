@@ -37,10 +37,10 @@
     <h3 class="index-h3" id="about" style="margin-top: 0em;">Latest Releases</h3>
     <p>These are Lime3DS' latest releases/builds for the following platforms:</p>
   <div id="bbcon">
-    <button class="build-button">Android</button>
-    <button class="build-button">Linux</button> <br>
-    <button class="build-button">Windows</button>
-    <button class="build-button">MacOS</button>
+    <button class="build-button" id="androidButton">Android</button>
+    <button class="build-button" id="linuxButton">Linux</button> <br>
+    <button class="build-button" id="windowsButton">Windows</button>
+    <button class="build-button" id="macosButton">MacOS</button>
   </div>
 </div>
 <script>
@@ -92,6 +92,71 @@
         object.style.left = (container.offsetWidth / 2 - object.offsetWidth / 2 + offsetX) + 'px';
         object.style.top = (container.offsetHeight / 2 - object.offsetHeight / 2 + offsetY) + 'px';
     });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const baseUrl = 'https://github.com/Lime3DS/Lime3DS/releases/latest';
+
+    async function getFileUrl(ending) {
+        const response = await fetch(baseUrl);
+        const text = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
+        const links = doc.querySelectorAll('a');
+        
+        for (const link of links) {
+            if (link.href.endsWith(ending)) {
+                return link.href;
+            }
+        }
+        return null;
+    }
+
+    function downloadFile(url) {
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = url.split('/').pop();
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    document.getElementById('androidButton').addEventListener('click', async () => {
+        const url = await getFileUrl('-android-universal.apk');
+        if (url) {
+            downloadFile(url);
+        } else {
+            alert('File not found');
+        }
+    });
+
+    document.getElementById('windowsButton').addEventListener('click', async () => {
+        const url = await getFileUrl('-windows-msys2.zip');
+        if (url) {
+            downloadFile(url);
+        } else {
+            alert('File not found');
+        }
+    });
+
+    document.getElementById('linuxButton').addEventListener('click', async () => {
+        const url = await getFileUrl('-linux-appimage.tar.gz');
+        if (url) {
+            downloadFile(url);
+        } else {
+            alert('File not found');
+        }
+    });
+
+    document.getElementById('macosButton').addEventListener('click', async () => {
+        const url = await getFileUrl('-macos-universal.tar.gz');
+        if (url) {
+            downloadFile(url);
+        } else {
+            alert('File not found');
+        }
+    });
+});
 </script>
 </body>
   </html>

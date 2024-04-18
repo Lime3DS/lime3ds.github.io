@@ -33,8 +33,6 @@ body {
   border-radius: 10px;
   cursor: pointer;
   display: inline;
-  position: absolute;
-  left: 0;
   margin-left: 5px;
   font-family: 'Ubuntu', sans-serif;
   display: inline;
@@ -52,7 +50,6 @@ body {
 
 .dropbdown-content {
   display: none;
-  position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);

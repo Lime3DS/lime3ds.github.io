@@ -1,0 +1,24 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#bbcon {
+  margin: 12px auto;
+}
+
+.build-button {
+  background-color: #111111;
+  color: white;
+  padding: 12px 17px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline;
+  margin: 12px auto;
+  font-family: 'Ubuntu', sans-serif;
+
+.build-button:hover,
+.build-button:focus {
+  background-color: #333333;
+}

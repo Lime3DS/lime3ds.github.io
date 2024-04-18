@@ -62,6 +62,7 @@ body {
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform-origin: top;
   margin-top: 10px;
+  position: absolute;
 }
 
 .dropbdown-content a {

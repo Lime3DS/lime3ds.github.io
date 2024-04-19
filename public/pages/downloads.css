@@ -17,6 +17,7 @@ body {
   display: inline;
   margin: 12px auto;
   font-family: 'Ubuntu', sans-serif;
+  position: absolute;
 }
 
 .build-button:hover,

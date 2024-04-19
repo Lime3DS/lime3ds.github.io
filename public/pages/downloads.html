@@ -142,6 +142,13 @@
     }
 
     document.getElementById('androidButton').addEventListener('click', async () => {
+        var choice = confirm('Manually installing Lime3DS through app install packages is not recommended. Obtainium is the supported method of installation.');
+
+        if (choice == true) {
+            window.location.href = 'https://github.com/Lime3DS/Lime3DS/tree/master?tab=readme-ov-file#android';
+        } else {
+            // Cancelled, do nothing or stop the current script
+        }
         const url = await getAssetUrl('-android-universal.apk');
         if (url) {
             downloadFile(url);

@@ -18,6 +18,7 @@ body {
   margin: 12px auto;
   font-family: 'Ubuntu', sans-serif;
   position: absolute;
+  margin-right: 12px;
 }
 
 .build-button:hover,
@@ -61,12 +62,6 @@ body {
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform-origin: top;
   position: relative;
-}
-
-@media (max-width: 768px) {
-  .dropbdown-content {
-    top: calc(33vh + 100vh / 33 * 2vh);
-  }
 }
 
 .dropbdown-content a {

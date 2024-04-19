@@ -149,13 +149,13 @@
         } else {
             location.href = 'https://lime3ds.vercel.app/pages/downloads.html'
         }
-        /* const url = await getAssetUrl('-android-universal.apk');
+        const url = await getAssetUrl('-android-universal.apk');
         if (url) {
-            downloadFile(url);
+            // downloadFile(url);
         } else {
             alert('File not found');
         }
-    }); */
+    });
 
     document.getElementById('windowsButton1').addEventListener('click', async () => {
         const url = await getAssetUrl('-windows-msvc.zip');

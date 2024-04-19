@@ -17,8 +17,7 @@ body {
   display: inline;
   margin: 12px auto;
   font-family: 'Ubuntu', sans-serif;
-  position: absolute;
-  margin-right: 12px;
+  z-index: 1;
 }
 
 .build-button:hover,
@@ -47,6 +46,7 @@ body {
 .dropbdown {
   font-family: 'Ubuntu', sans-serif;
   display: inline;
+  z-index: 999;
 }
 
 .dropbdown-content {

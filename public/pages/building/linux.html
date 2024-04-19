@@ -44,14 +44,14 @@
                         <li>SDL2</li>
                         <ul>
                             <li>Deb: <code class="language-bash">sudo apt install libsdl2-dev</code></li>
-                            <li>Arch: <code>pacman -S sdl2</code></li>
+                            <li>Arch: <code>pacman -S --needed sdl2</code></li>
                             <li>Fedora: <code>sudo dnf install SDL2-devel</code></li>
                             <li>OpenSUSE: <code>zypper in libSDL2-devel</code></li>
                         </ul>
                         <li>OpenSSL (Optional)</li>
                         <ul>
                             <li>Deb: <code>sudo apt install libssl-dev</code></li>
-                            <li>Arch: <code>pacman -S openssl-1.0</code></li>
+                            <li>Arch: <code>pacman -S --needed openssl-1.0</code></li>
                             <li>Fedora: <code>sudo dnf install openssl-devel</code></li>
                             <li>OpenSUSE: <code>zypper in openssl-devel</code></li>
                         </ul>
@@ -62,7 +62,7 @@
                                 <li>For Translation Support: <code>apt install qt6-l10n-tools qt6-tools-dev qt6-tools-dev-tools</code></li>
                                 <li>For WrapOpenGL Errors: <code>apt install libgl-dev</code></li>
                             </ul>
-                            <li>Arch: <code>pacman -S qt6-base qt6-multimedia qt6-multimedia-ffmpeg</code></li>
+                            <li>Arch: <code>pacman -S --needed qt6-base qt6-multimedia qt6-multimedia-ffmpeg</code></li>
                             <ul>
                                 <li>You also need a multimedia backend: <code>qt6-multimedia-ffmpeg</code> or <code>qt6-multimedia-gstreamer</code></li>
                             </ul>
@@ -116,7 +116,7 @@
                             <li>GCC 11.0+</li>
                             <ul>
                                 <li>Deb: <code>apt install build-essential</code></li>
-                                <li>Arch: <code>pacman -S base-devel</code></li>
+                                <li>Arch: <code>pacman -S --needed base-devel</code></li>
                                 <li>Fedora: <code>dnf install gcc-c++</code></li>
                                 <li>OpenSUSE: <code>zypper in gcc-c++</code></li>
                             </ul>
@@ -126,7 +126,7 @@
                                 <ul>
                                     <li>Note for Ubuntu users: Clang 15 is available only from 22.10 onward. For earlier distro versions, see: <a href="https://apt.llvm.org/">https://apt.llvm.org/</a></li>
                                 </ul>
-                                <li>Arch: <code>pacman -S clang</code>, <code>libc++</code> is in the AUR. Use pacaur or yaourt to install it.</li>
+                                <li>Arch: <code>pacman -S --needed clang</code>, <code>libc++</code> is in the AUR. Use pacaur or yaourt to install it.</li>
                                 <li>Fedora: <code>dnf install clang libcxx-devel</code></li>
                                 <li>OpenSUSE: <code>zypper in clang</code></li>
                             </ul>
@@ -134,7 +134,7 @@
                         <li>CMake 3.20+</li>
                         <ul>
                             <li>Deb: <code>apt install cmake</code></li>
-                            <li>Arch: <code>pacman -S cmake</code></li>
+                            <li>Arch: <code>pacman -S --needed cmake</code></li>
                             <li>Fedora: <code>dnf install cmake</code></li>
                             <li>OpenSUSE: <code>zypper in cmake extra-cmake-modules</code></li>
                         </ul>

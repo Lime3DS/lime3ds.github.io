@@ -59,8 +59,7 @@ body {
   transform: scale(0.8);
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform-origin: top;
-  top: calc(33vh + 100vh / 33);
-  position: absolute;
+  position: relative;
 }
 
 @media (max-width: 768px) {

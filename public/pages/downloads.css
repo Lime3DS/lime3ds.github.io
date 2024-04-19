@@ -46,7 +46,6 @@ body {
 .dropbdown {
   font-family: 'Ubuntu', sans-serif;
   display: inline;
-  z-index: 999;
 }
 
 .dropbdown-content {
@@ -62,6 +61,7 @@ body {
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform-origin: top;
   position: relative;
+  z-index: 999;
 }
 
 .dropbdown-content a {

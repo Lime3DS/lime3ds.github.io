@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lime3DS</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../wiki.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+        body {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+      <div id="header">
+        <div class="dropdown">
+          <button class="dropbtn">Menu</button>
+          <div class="dropdown-content">
+            <a href="../../index.html">Home</a>
+            <a href="../wiki.html">Wiki</a>
+          </div>
+        </div>
+        <div id="link_tray">
+            <a href="https://github.com/Lime3DS/Lime-3DS-Emulator">GitHub</a> |
+            <a href="https://discord.com/invite/4ZjMpAp3M6">Discord</a> |
+            <a href="https://github.com/Lime3DS/Lime-3DS-Emulator/releases">Releases</a>
+        </div>
+        <img class="lime-logo" src="../../lime.svg" width="45px">
+      </div>
+        <div class="wiki-content">
+            <div class="content">
+                <h1>Dumping Digital Installs</h1>
+                <h2>What you will need:</h2>
+                <ul>
+                    <li>Latest Version of <a href="https://github.com/d0k3/GodMode9/releases/tag/v2.1.1">GodMode9</a></li>
+                    <li>3DS System with <a href="https://3ds.hacks.guide/">boot9strap</a></li>
+                    <li>SD Card (8GB Recommended)</li>
+                    <li>SD Card Reader or <a href="https://gist.github.com/PixelSergey/ae2c003fc68bfab21ccbb3bfeb6fba46">FTPD</a></li>
+                </ul>
+                <br>
+                <h1>Setting Up</h1>
+                <ul>
+                    <li>Put the SD Card into the 3DS</li>
+                    <li>Setup GodMode9 using the instructions <a href="https://github.com/d0k3/GodMode9#quick-start-guide">here</a></li>
+                    <li>Boot into GodMode9 by holding (START) and pressing (POWER)</li>
+                    <li>Press the (HOME) button and select Title manager by pressing (A).</li>
+                </ul>
+                <h1>Dumping Games</h1>
+                <ul>
+                    <li>Select either [A:] SD CARD or [1:] NAND/TWL depending on what you want to dump.</li>
+                    <ul>
+                        <li>User Installed/eShop Titles: [A:] SD CARD</li>
+                        <li>System Titles: [I:] NAND/TWL</li>
+                    </ul>
+                    <li>Select the title you want to dump -> Manage Dump</li>
+                    <li>Select Dump CXI/NDS file.</li>
+                    <li>When the dump is complete, press (A) to continue</li>
+                    <li>Hold down (R) and press (START) to power off your 3DS</li>
+                    <li>Take out the SD Card and insert it into your computer</li>
+                    <li>Navigate to the /gm9/out/ folder on your SD Card</li>
+                    <li>Identify the title. The format of the file <a href="https://github.com/d0k3/GodMode9/blob/ebf904a2c2f0d992a58698d09dd78f593db441c9/source/game/gameutil.c#L1853">may be one of the following</a></li>
+                    <ul>
+                        <li>[Title Name]([Product Code])([Region]).cxi</li>
+                        <li>[Title ID]([Product Code]).cxi</li>
+                    </ul>
+                    <li>Copy the CXI to a folder on your computer.</li>
+                </ul>
+                <p>You can now use this ROM/image with Lime3DS. You can open it directly from the menu bar (File > Load File) <br> or add a folder containing all your dumps by double-clicking the + icon in the main Lime3DS window or by double clicking on Add New Game Directory.</p>
+                <h1>Errors</h1>
+                <ul>
+                    <li>"There was a error with dumping"</li>
+                    <ul>
+                        <li>Make sure you are using the latest version of <a href="https://github.com/d0k3/GodMode9/releases/tag/v2.1.1">GodMode9</a></li>
+                        <li>Redownload the title from the eShop</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

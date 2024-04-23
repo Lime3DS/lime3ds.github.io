@@ -19,6 +19,7 @@ li {
     top: 10%;
     margin: 1.2em;
     padding: 2.5%;
+    width: fit-content;
 }
 
 .table-of-contents ul {
@@ -51,9 +52,9 @@ li {
 }
 
 .wiki-main-page {
-    position: absolute;
-    top: 10%;
-    left: 20%;
+    position: relative;
+    top: -20vh;
+    left: 7.5%;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -61,7 +62,7 @@ li {
 
 .wiki-main-page .content {
     display: inline-block;
-    width: 100%;
+    width: 100%; 
 }
 
 @media (pointer:none), (pointer:coarse) {

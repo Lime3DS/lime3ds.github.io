@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lime3DS</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../wiki.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+        body {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+      <div id="header">
+        <div class="dropdown">
+          <button class="dropbtn">Menu</button>
+          <div class="dropdown-content">
+            <a href="../../index.html">Home</a>
+            <a href="../wiki.html">Wiki</a>
+          </div>
+        </div>
+        <div id="link_tray">
+            <a href="https://github.com/Lime3DS/Lime3DS">GitHub</a> |
+            <a href="https://discord.com/invite/4ZjMpAp3M6">Discord</a> |
+            <a href="https://github.com/Lime3DS/Lime3DS/releases">Releases</a>
+        </div>
+        <img class="lime-logo" src="../../lime.svg" width="45px">
+      </div>
+        <div class="wiki-content">
+            <div class="content">
+                <h1>Dumping Save Data</h1>
+                <h2>What you will need:</h2>
+                <ul>
+                    <li>3DS System with <a href="https://3ds.hacks.guide/">boot9strap</a></li>
+                    <li><a href="https://github.com/BernardoGiordano/Checkpoint">Checkpoint</a></li>
+                    <li>SD Card Reader or <a href="https://gist.github.com/PixelSergey/ae2c003fc68bfab21ccbb3bfeb6fba46">FTPD</a></li>
+                </ul>
+                <br>
+                <h1>Installing Checkpoint</h1>
+                <ul>
+                    <li>Download Checkpoint using the link above</li>
+                    <li>Install using one of these systems:</li>
+                    <ul>
+                        <li>CIA Installation: Transfer the CIA file to the SD Card and install it with <a href="https://gbatemp.net/download/fbi.38481/">FBI</a></li>
+                        <li>Rosalina-Based Homebrew Launcher: Transfer the 3dsx file to /3ds/ on the SD Card.</li>
+                        <li>Hax based homebrew launcher are not supported by Checkpoint</li>
+                    </ul>
+                </ul>
+                <h1>Transferring Save Data</h1>
+                <ul>
+                    <li>Open Checkpoint. If this is the first time launching Checkpoint, it may take a considerably longer than usual depending on the amount of installed titles.</li>
+                    <li>Highlight the game you want to dump by navigating to it with the D-pad.</li>
+                    <li>Press A and select Backup on the bottom screen. You will be prompted Yes or No. Select Yes by pressing A.</li>
+                    <li>You will have the option to name the save folder. Name it whatever you want or use the name given to it. Press OK on the bottom screen.</li>
+                    <li>The top screen will flash a message 'Success! Progress correctly saved to disk.' Exit out of Checkpoint.</li>
+                    <li>Transfer all files located in /3ds/Checkpoint/saves/[Game Name]/[Folder created in Step 4] to the computer.</li>
+                    <li>Place the files in Lime3DS’s emulated SD card’s save directory. You can open the save directory by right-clicking on a game in Lime3DS and clicking “Open Save Data Directory”. <br> If the directory doesn’t exist, start the game once and the directory will be created.</li>
+                </ul>
+                <h1>Transferring Extra Data</h1>
+                <ul>
+                    <li>Open Checkpoint. If this is the first time launching Checkpoint, it may take a considerably longer than usual depending on the amount of installed titles.</li>
+                    <li>Highlight the game you want to dump by navigating to it with the D-pad.</li>
+                    <li>Press A and select Backup on the bottom screen. You will be prompted Yes or No. Select Yes by pressing A.</li>
+                    <li>You will have the option to name the save folder. Name it whatever you want or use the name given to it. Press OK on the bottom screen.</li>
+                    <li>The top screen will flash a message 'Success! Progress correctly saved to disk.' Exit out of Checkpoint.</li>
+                    <li>Transfer all files located in /3ds/Checkpoint/extdata/[Game Name]/[Folder created in Step 4] to the computer.</li>
+                    <li>Place the files in Lime3DS’s emulated SD card’s save directory. You can open the save directory by right-clicking on a game in Lime3DS and clicking “Open Extra Data Directory”. <br> and you should put the files inside the user folder. These directories may have to be created if the title the extra data was dumped from hasn’t been played in Lime3DS yet</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

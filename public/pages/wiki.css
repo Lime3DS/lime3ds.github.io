@@ -70,3 +70,7 @@ li {
         top: 45%;
     } 
 }
+
+.dropdown-content {
+    top: 32.5px;
+}

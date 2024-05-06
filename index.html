@@ -57,8 +57,6 @@
         GPU: OpenGL ES 3.2 or Vulkan 1.1 support.</p> <br>
     <p>Have any questions? Please refer to the <a href="https://github.com/Lime3DS/Lime3DS">GitHub repository</a> or the <a href="https://discord.com/invite/4ZjMpAp3M6">Discord server</a>.</p>
 
-    <h3 class="index-h3" id="todo">To do</h3>
-    <p>Sorry, this area is under construction! Please check again soon.</p>
     <p>Site Created by <a href="https://limegradient.xyz/">LimeGradient</a> and <a href="https://github.com/LutraVibes">LutraVibes</a></p>
 </div>
 <script>
@@ -74,23 +72,6 @@
             var img = new Image();
             img.src = array[i];
             preloadImages.list.push(img);
-        }
-    }
-
-    function toggleDropdown(open) {
-        var dropdownContent = document.getElementById('dropdownContent');
-        if (open) {
-            dropdownContent.style.display = 'block';
-            setTimeout(function() {
-                dropdownContent.style.opacity = 1;
-                dropdownContent.style.transform = 'scale(1)';
-            }, 10); // Adding a slight delay for smoother animation
-        } else {
-            dropdownContent.style.opacity = 0;
-            dropdownContent.style.transform = 'scale(0.8)';
-            setTimeout(function() {
-                dropdownContent.style.display = 'none';
-            }, 300); // Same duration as the transition in CSS
         }
     }
 
@@ -111,5 +92,6 @@
         object.style.top = (container.offsetHeight / 2 - object.offsetHeight / 2 + offsetY) + 'px';
     });
 </script>
+<script src="index.js"></script>
 </body>
 </html>

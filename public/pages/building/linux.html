@@ -166,8 +166,8 @@
                     <code class="language-bash">
     mkdir build
     cd build
-    cmake .. -DCMAKE_CXX_COMPILER=clang++-5.0 \
-        -DCMAKE_C_COMPILER=clang-5.0 \
+    cmake .. -DCMAKE_CXX_COMPILER=clang++ \
+        -DCMAKE_C_COMPILER=clang \
         -DCMAKE_CXX_FLAGS="-O2 -g -stdlib=libc++"
     cmake --build . -- -j"$(nproc)"
     sudo make install (optional)

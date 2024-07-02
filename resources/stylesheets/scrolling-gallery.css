@@ -20,13 +20,19 @@
   height: 100%;
 }
 
-#scrolling-gallery img {
-  padding: 0;
-  margin: 0;
+#scrolling-gallery-container {
+  position: absolute;
+  display: inline-block;
+  height: 100%;
   animation-name: scroll;
   animation-duration: 80s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+
+#scrolling-gallery img {
+  padding: 0;
+  margin: 0;
   height: 100%;
 }
 
@@ -35,6 +41,6 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-500%);
+    transform: translateX(-50%);
   }
 }

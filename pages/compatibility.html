@@ -45,7 +45,7 @@
     <script>
         async function getCompatibilityList() {
             const listBody = document.querySelector(".compatibility-list");
-            const res = await fetch("https://raw.githubusercontent.com/Lime3DS/Lime3DS/master/dist/compatibility_list/compatibility_list.json");
+            const res = await fetch("https://raw.githubusercontent.com/Lime3DS/compatibility-list/master/compatibility_list.json");
             const ogJson = await res.json();
             const json = ogJson.sort();
 

@@ -1,0 +1,52 @@
+#header {
+  background-color: #222222;
+  color: white;
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#header h1 {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+#lime-buddy {
+  position: absolute !important;
+  left: 5px;
+  top: 5px;
+  width: 45px;
+  height: 45px;
+  transition: transform 0.1s ease-in-out;
+}
+
+#lime-buddy:hover {
+  content: url('/resources/images/lime-buddy/lime-smile.png');
+  transform: scale(1.07); /* Expand the lime when hovering */
+}
+
+#lime-buddy:not(:hover) {
+  content: url('/resources/images/lime-buddy/lime.png');
+}
+
+#emu-name {
+  position: absolute;
+  left: 50px;
+}
+
+#link_tray {
+  display: flex;
+  text-align: center;
+  margin: auto;
+}
+
+#link_tray a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}

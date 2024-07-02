@@ -1,0 +1,40 @@
+#scrolling-gallery {
+  height: 400px;
+  bottom: 0;
+  overflow:hidden;
+  overflow-y: hidden;
+  white-space:nowrap;
+  font-size: 0;
+  position: relative;
+}
+
+#scrolling-gallery:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to right, #222222, #0000 10%, #0000 90%, #222222);
+  width: 100%;
+  height: 100%;
+}
+
+#scrolling-gallery img {
+  padding: 0;
+  margin: 0;
+  animation-name: scroll;
+  animation-duration: 80s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  height: 100%;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-500%);
+  }
+}

@@ -1,9 +1,3 @@
-body {
-    font-family: 'Ubuntu', sans-serif;
-}
-
-/* start Compatability List Styles start */
-
 table {
   border-collapse: collapse;
   width: 100%;
@@ -86,5 +80,3 @@ td:nth-child(2)[data-compatibility="99"]::before {
   outline: none;
   box-shadow: 0 0 5px #fff;
 }
-
-/* end Compatability List Styles end */

@@ -38,11 +38,20 @@
   position: absolute;
   left: 50px;
 }
+  #emu-name {
+    display: none;
+  }
 
 #link_tray {
   display: flex;
   text-align: center;
   margin: auto;
+}
+@media (orientation: portrait) {
+  #link_tray {
+    position: absolute;
+    right: 10px
+  }
 }
 
 #link_tray a {

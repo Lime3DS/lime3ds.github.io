@@ -43,13 +43,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  height: fit-content;
   width: 60%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   #box {
-    width: 90.22%;
+    width: 90%;
   }
 }
 

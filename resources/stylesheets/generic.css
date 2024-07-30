@@ -47,7 +47,7 @@ body {
   width: 60%;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 90em) {
   #box {
     width: 90%;
   }
@@ -69,9 +69,9 @@ body {
   width: 45%;
 }
 
-@media (max-width: 768px) {
+@media (orientation: portrait) {
   #content {
-    width: 70%;
+    width: 90%;
   }
 }
 

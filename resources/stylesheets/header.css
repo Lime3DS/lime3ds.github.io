@@ -39,7 +39,8 @@
   left: 50px;
 }
 @media (orientation: portrait) {
-  #emu-name {
+  #emu-name,
+  .desktop-only {
     display: none;
   }
 }

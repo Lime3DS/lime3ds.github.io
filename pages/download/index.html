@@ -1,0 +1,81 @@
+<head>
+    <script src="/resources/scripts/htmlimporter.js"></script>
+    <script>
+        HTMLImporter.import("/resources/templates/generic-head.html");
+    </script>
+    <link rel="stylesheet" href="/resources/stylesheets/download.css" />
+</head>
+
+<body>
+    <script>HTMLImporter.import("/resources/templates/generic-nav.html");</script>
+    <h1>Latest Updates on GitHub - Lime3DS</h1>
+    <div id="release" class="release"></div>
+
+    <div class="navigation">
+        <button id="prev" onclick="navigate(-1)" disabled>Previous</button>
+        <button id="next" onclick="navigate(1)" disabled>Next</button>
+    </div>
+
+    <script>
+        const apiURL = "https://api.github.com/repos/Lime3DS/Lime3DS/releases";
+        let releases = [];
+        let currentIndex = 0;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchReleases();
+        });
+
+        async function fetchReleases() {
+            try {
+                const response = await fetch(apiURL);
+                releases = await response.json();
+                if (releases.length) {
+                    showRelease(currentIndex);
+                    updateNavigationButtons();
+                }
+            } catch (error) {
+                console.error("Error fetching releases:", error);
+            }
+        }
+
+        function showRelease(index) {
+            const releaseDiv = document.getElementById("release");
+            const release = releases[index];
+            const classMap = {
+                windows: "windows",
+                linux: "linux",
+                mac: "mac",
+                android: "android"
+            };
+
+            const assetList = release.assets
+                .map(asset => {
+                    const className = Object.keys(classMap).find(key => asset.name.includes(key));
+                    return className ? `<li><a href="${asset.browser_download_url}" class="button ${classMap[className]}">${asset.name}</a></li>` : '';
+                })
+                .join("");
+
+            releaseDiv.innerHTML = `
+                <h4>Download:</h4>
+                <ul>${assetList}</ul>
+                <h3>Changelog: ${release.name}</h3>
+                <div>${marked(release.body || "No release notes available.")}</div>
+            `;
+        }
+
+        function navigate(direction) {
+            currentIndex = Math.min(Math.max(0, currentIndex + direction), releases.length - 1);
+            showRelease(currentIndex);
+            updateNavigationButtons();
+        }
+
+        function updateNavigationButtons() {
+            document.getElementById('prev').disabled = currentIndex === 0;
+            document.getElementById('next').disabled = currentIndex === releases.length - 1;
+        }
+    </script>
+
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.min.js"></script>
+</body>
+
+</html>

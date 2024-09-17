@@ -1,0 +1,51 @@
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.windows {
+    background-color: #0078D7;
+}
+
+.linux {
+    background-color: #FCC624;
+    color: #333;
+}
+
+.mac {
+    background-color: #A4C8E1;
+}
+
+.android {
+    background-color: #A4C639;
+}
+
+.button:hover {
+    filter: brightness(90%);
+}
+
+.navigation {
+    margin-top: 20px;
+}
+
+#release {
+    margin-top: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

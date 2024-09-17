@@ -12,27 +12,23 @@
     <div id="content">
         <h1>Latest Updates on GitHub - Lime3DS</h1>
         <div id="release" class="release"></div>
-
         <div class="navigation">
             <button id="prev" onclick="navigate(-1)" disabled>Next</button>
             <button id="next" onclick="navigate(1)" disabled>Previous</button>
         </div>
-
+        
         <script>HTMLImporter.import("/resources/templates/generic-footer.html");</script>
     </div>
 
     <script>
-        const apiURL = "https://api.github.com/repos/Lime3DS/Lime3DS/releases";
         let releases = [];
         let currentIndex = 0;
-
         document.addEventListener('DOMContentLoaded', () => {
             fetchReleases();
         });
-
         async function fetchReleases() {
             try {
-                const response = await fetch(apiURL);
+                const response = await fetch("https://api.github.com/repos/Lime3DS/Lime3DS/releases");
                 releases = await response.json();
                 if (releases.length) {
                     showRelease(currentIndex);
@@ -62,10 +58,20 @@
 
             releaseDiv.innerHTML = `
                 <h4>Download:</h4>
-                <ul>${assetList}</ul>
+                <ul>
+                    ${assetList}
+                    <li>
+                        <p>We are also on Flathub:</p>
+                        <a href="https://flathub.org/apps/io.github.lime3ds.Lime3DS" rel="nofollow">
+                            <img width="180" alt="Download on Flathub" src="https://camo.githubusercontent.com/5e88d7b1628407d9c67f8d85ab66e676a61f6c7e0f6d6c35418bbe0ef13d8ec0/68747470733a2f2f646c2e666c61746875622e6f72672f6173736574732f6261646765732f666c61746875622d62616467652d656e2e706e67" data-canonical-src="https://dl.flathub.org/assets/badges/flathub-badge-en.png" style="max-width: 100%;">
+                        </a>
+                    </li>
+                </ul>
                 <h2>Changelog:</h2>
                 <h3>${release.name}</h3>
-                <div>${marked(release.body || "No release notes available.")}</div>
+                <div>
+                    ${marked(release.body || "No release notes available.")}
+                </div>
             `;
         }
 

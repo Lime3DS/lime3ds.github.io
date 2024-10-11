@@ -1,0 +1,202 @@
+<head>
+    <script src="/resources/scripts/htmlimporter.js"></script>
+    <script>
+        HTMLImporter.import("/resources/templates/generic-head.html");
+    </script>
+    <link rel="stylesheet" href="/resources/stylesheets/download.css" />
+</head>
+
+<body>
+    <script>HTMLImporter.import("/resources/templates/generic-nav.html");</script>
+
+    <div id="content">
+        <h1>Latest Lime3DS Downloads</h1>
+        <div id="release" class="release">
+
+        </div>
+        <div id="others" class="">
+
+        </div>
+
+        <div id="changelog">
+
+        </div>
+
+        <div class="navigation">
+            <button id="prev" onclick="navigate(-1)" disabled>Next</button>
+            <button id="next" onclick="navigate(1)" disabled>Previous</button>
+        </div>
+
+        <script>HTMLImporter.import("/resources/templates/generic-footer.html");</script>
+    </div>
+
+    <script>
+        const testing = false; // change to change for buttons block
+
+        let releases = [];
+        let currentIndex = 0;
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchReleases();
+        });
+
+        async function fetchReleases() {
+            try {
+                const response = await fetch("https://api.github.com/repos/Lime3DS/Lime3DS/releases");
+                releases = await response.json();
+                if (releases.length) {
+                    showRelease(currentIndex);
+                    updateNavigationButtons();
+                }
+            } catch (error) {
+                console.error("Error fetching releases:", error);
+            }
+        }
+
+        function detectSystem() {
+            const userAgent = navigator.userAgent;
+            if (userAgent.includes('Android')) return 'android';
+            if (userAgent.includes('Windows')) return 'windows';
+            if (userAgent.includes('Linux x86_64')) return 'linux'; // only linux can be android too, x11 catch all desktop but wayland back in firefox? add arm version too?
+            if (userAgent.includes('Macintosh')) return 'mac';
+
+            return 'all';
+        }
+
+        function showRelease(index) {
+            const releaseDiv = document.getElementById("release");
+            const othersDiv = document.getElementById("others");
+            const changelogDiv = document.getElementById("changelog");
+            const release = releases[index];
+            const system = detectSystem();
+            const classMap = {
+                windows: ["windows", "https://img.icons8.com/color/96/windows-11.png"],
+                linux: ["linux", "https://img.icons8.com/color/96/linux--v1.png"],
+                mac: ["mac", "https://img.icons8.com/color/96/mac-os-logo.png"],
+                android: ["android", "https://img.icons8.com/color/96/android-os.png"]
+            };
+
+            releaseDiv.innerHTML = '';
+            let others = '';
+
+
+            release.assets.forEach(asset => {
+                const className = Object.keys(classMap).find(key => asset.name.toLowerCase().includes(key));
+                if (className) {
+                    let assetHTML = '';
+
+                    let splited = asset.name.split('-');
+                    let btnName = '';
+
+                    if (splited.length > 3) {
+                        let part1 = splited[2] || '';
+                        let part2 = splited[3] ? splited[3].split('.')[0] : '';
+                        btnName = `${part1} ${part2}`;
+                    }
+
+                    if (testing) {
+                        assetHTML = `
+                        <button class="${classMap[className][0]}_ btn">
+                            <a href="https://flathub.org/apps/io.github.lime3ds.Lime3DS" rel="nofollow">
+                                <img width="96" src=${classMap[className][1]} >
+                                <p>${btnName}</p>
+                            </a>
+                        </button>       
+                    `
+                    } else {
+                        assetHTML = `<li><a href="${asset.browser_download_url}" class="button ${classMap[className][0]}">${btnName}</a></li>`;
+                    }
+
+                    if (className === system && (asset.name.toLowerCase().includes('-msvc.') || asset.name.toLowerCase().includes('.apk'))) {
+                        releaseDiv.innerHTML += assetHTML;
+                    } else {
+                        others += assetHTML;
+                    }
+                }
+            });
+
+
+            if (system === 'linux') {
+
+                if (testing) {
+                    releaseDiv.innerHTML += `
+                    <button class="linux_ btn">
+                    <a href="https://flathub.org/apps/io.github.lime3ds.Lime3DS" rel="nofollow">
+                        <img width="96" alt="Download on Flathub"
+                            src="https://camo.githubusercontent.com/5e88d7b1628407d9c67f8d85ab66e676a61f6c7e0f6d6c35418bbe0ef13d8ec0/68747470733a2f2f646c2e666c61746875622e6f72672f6173736574732f6261646765732f666c61746875622d62616467652d656e2e706e67"
+                            style="max-width: 100%;">
+                    </a>
+                </button>`;
+
+                } else {
+                    // the old way
+                    releaseDiv.innerHTML += `
+                        <li>
+                        <a href="https://flathub.org/apps/io.github.lime3ds.Lime3DS" rel="nofollow">
+                            <img width="180" alt="Download on Flathub" src="https://camo.githubusercontent.com/5e88d7b1628407d9c67f8d85ab66e676a61f6c7e0f6d6c35418bbe0ef13d8ec0/68747470733a2f2f646c2e666c61746875622e6f72672f6173736574732f6261646765732f666c61746875622d62616467652d656e2e706e67" style="max-width: 100%;">
+                        </a>
+                        </li> `;
+                }
+
+
+            } else {
+
+                /*wtf hahahaha break the line */
+                if (testing) {
+                    others += `
+                <button id="" class="linux_ btn">
+                    <a href="https://flathub.org/apps/io.github.lime3ds.Lime3DS" rel="nofollow">
+                        <img width="96" alt="Download on Flathub"
+                            src="https://camo.githubusercontent.com/5e88d7b1628407d9c67f8d85ab66e676a61f6c7e0f6d6c35418bbe0ef13d8ec0/68747470733a2f2f646c2e666c61746875622e6f72672f6173736574732f6261646765732f666c61746875622d62616467652d656e2e706e67"
+                            style="max-width: 100%;">
+                    </a>
+                </button>`;
+                } else {
+                    others += `
+                    <li>
+                        <a href="https://flathub.org/apps/io.github.lime3ds.Lime3DS" rel="nofollow">
+                            <img width="180" alt="Download on Flathub" src="https://camo.githubusercontent.com/5e88d7b1628407d9c67f8d85ab66e676a61f6c7e0f6d6c35418bbe0ef13d8ec0/68747470733a2f2f646c2e666c61746875622e6f72672f6173736574732f6261646765732f666c61746875622d62616467652d656e2e706e67" style="max-width: 100%;">
+                        </a>
+                    </li>
+              
+                `;
+                }
+
+
+            }
+
+
+            othersDiv.innerHTML = `<h2 onclick="topicRelease(this)" class="mark hide">Other options:</h2><summary id="topic" style="display:none">${others}</summary>`;
+
+
+            // make a separator better
+            changelogDiv.innerHTML = `
+                <h2 onclick="topicRelease(this)" class='hide mark'>Changelog: ${release.name}</h2>
+                <summary id="topic" style='display:none'>
+                    <div>
+                        ${marked(release.body || "No release notes available.")}
+                    </div>
+                </summary>
+            `;
+        }
+
+        function navigate(direction) {
+            currentIndex = Math.min(Math.max(0, currentIndex + direction), releases.length - 1);
+            showRelease(currentIndex);
+            updateNavigationButtons();
+        }
+
+        function updateNavigationButtons() {
+            document.getElementById('prev').disabled = currentIndex === 0;
+            document.getElementById('next').disabled = currentIndex === releases.length - 1;
+        }
+
+        function topicRelease(element) {
+            element.classList.toggle('hide');
+            const felement = element.parentElement
+            document.querySelector(`#${felement.id} #topic`).style.display = element.classList.contains('hide') ? 'none' : 'block';
+
+        }
+    </script>
+
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.min.js"></script>
+</body>
